@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="top.glory.web.dao.ParMapper" >
+  <resultMap id="BaseResultMap" type="top.glory.web.model.Par" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="breed_id" property="breedId" jdbcType="INTEGER" />
+    <result column="breed_name" property="breedName" jdbcType="VARCHAR" />
+    <result column="toxin_id" property="toxinId" jdbcType="INTEGER" />
+    <result column="toxin_name" property="toxinName" jdbcType="VARCHAR" />
+    <result column="par" property="par" jdbcType="REAL" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, breed_id, breed_name, toxin_id, toxin_name, par
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="top.glory.web.model.ParExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from par
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from par
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from par
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="top.glory.web.model.ParExample" >
+    delete from par
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="top.glory.web.model.Par" >
+    insert into par (id, breed_id, breed_name, 
+      toxin_id, toxin_name, par
+      )
+    values (#{id,jdbcType=INTEGER}, #{breedId,jdbcType=INTEGER}, #{breedName,jdbcType=VARCHAR}, 
+      #{toxinId,jdbcType=INTEGER}, #{toxinName,jdbcType=VARCHAR}, #{par,jdbcType=REAL}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="top.glory.web.model.Par" >
+    insert into par
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="breedId != null" >
+        breed_id,
+      </if>
+      <if test="breedName != null" >
+        breed_name,
+      </if>
+      <if test="toxinId != null" >
+        toxin_id,
+      </if>
+      <if test="toxinName != null" >
+        toxin_name,
+      </if>
+      <if test="par != null" >
+        par,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="breedId != null" >
+        #{breedId,jdbcType=INTEGER},
+      </if>
+      <if test="breedName != null" >
+        #{breedName,jdbcType=VARCHAR},
+      </if>
+      <if test="toxinId != null" >
+        #{toxinId,jdbcType=INTEGER},
+      </if>
+      <if test="toxinName != null" >
+        #{toxinName,jdbcType=VARCHAR},
+      </if>
+      <if test="par != null" >
+        #{par,jdbcType=REAL},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="top.glory.web.model.ParExample" resultType="java.lang.Integer" >
+    select count(*) from par
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update par
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.breedId != null" >
+        breed_id = #{record.breedId,jdbcType=INTEGER},
+      </if>
+      <if test="record.breedName != null" >
+        breed_name = #{record.breedName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.toxinId != null" >
+        toxin_id = #{record.toxinId,jdbcType=INTEGER},
+      </if>
+      <if test="record.toxinName != null" >
+        toxin_name = #{record.toxinName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.par != null" >
+        par = #{record.par,jdbcType=REAL},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update par
+    set id = #{record.id,jdbcType=INTEGER},
+      breed_id = #{record.breedId,jdbcType=INTEGER},
+      breed_name = #{record.breedName,jdbcType=VARCHAR},
+      toxin_id = #{record.toxinId,jdbcType=INTEGER},
+      toxin_name = #{record.toxinName,jdbcType=VARCHAR},
+      par = #{record.par,jdbcType=REAL}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="top.glory.web.model.Par" >
+    update par
+    <set >
+      <if test="breedId != null" >
+        breed_id = #{breedId,jdbcType=INTEGER},
+      </if>
+      <if test="breedName != null" >
+        breed_name = #{breedName,jdbcType=VARCHAR},
+      </if>
+      <if test="toxinId != null" >
+        toxin_id = #{toxinId,jdbcType=INTEGER},
+      </if>
+      <if test="toxinName != null" >
+        toxin_name = #{toxinName,jdbcType=VARCHAR},
+      </if>
+      <if test="par != null" >
+        par = #{par,jdbcType=REAL},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="top.glory.web.model.Par" >
+    update par
+    set breed_id = #{breedId,jdbcType=INTEGER},
+      breed_name = #{breedName,jdbcType=VARCHAR},
+      toxin_id = #{toxinId,jdbcType=INTEGER},
+      toxin_name = #{toxinName,jdbcType=VARCHAR},
+      par = #{par,jdbcType=REAL}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

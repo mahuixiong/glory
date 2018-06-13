@@ -1,0 +1,97 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family:"Microsoft YaHei", 微软雅黑, "MicrosoftJhengHei", 华文细黑, STHeiti, MingLiu;
+}
+a {
+	text-decoration: none;
+}
+li {
+	list-style: none;
+}
+
+/*头部开始*******************************/
+#header {
+	width: 100%;
+	/* background-color: #58a0fd; */
+	line-height: 37px;
+	margin: 0 auto;
+	border-radius: 2px;
+}
+#maps{
+	margin:0 10% 0 6%;
+	width:80%;
+	
+	
+}
+#maps img{
+	height:100%;
+	width:100%;
+	
+	
+}
+#maps .linko,#maps .linkw,#maps .linkt{
+	width: 32%;
+	height:50px;
+	background-color: #4898FF;
+	float: left;
+	/* border-radius: 5px; */
+	margin-left: 10px;
+}
+#maps .linko a,#maps .linkw a,#maps .linkt a{
+	display: block;
+	height: 100%;
+	text-align: center;
+	line-height: 50px;
+	color:white;
+	font-size: bold;
+	font-size: 18px;
+	
+}
+
+#header>span {
+	color: white;
+	font-size: 14px;
+	margin-left: 21px;
+}
+.content_box {
+	width: 100%;
+	
+	margin: 0% 10% 0% -7%;
+	
+}
+.content {
+	width: 80%;
+	margin: 30px auto;
+	
+}
+	
+.content p {
+	color: #002e73;
+	font:bold;
+}
+.content p a{
+		color:#8cc562;
+}
+/*内容开始*******************************/
+.content p {
+	font-size: 14px;
+	margin-top: 23px;
+}
+/*页脚开始*******************************/
+.footer {
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 195px;
+	margin-bottom:137px;
+}
+.footer p {
+	color: #002e73;
+	text-align: center;
+	font-size: 12px;
+	line-height: 25px;
+}

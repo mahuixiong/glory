@@ -1,0 +1,71 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family:"Microsoft YaHei", 微软雅黑, "MicrosoftJhengHei", 华文细黑, STHeiti, MingLiu;
+}
+a {
+	text-decoration: none;
+}
+li {
+	list-style: none;
+}
+
+/*头部开始*******************************/
+#header {
+	width: 1100px;
+	/* background-color: #58a0fd; */
+	line-height: 37px;
+	margin: 0 auto;
+	border-radius: 2px;
+}
+#maps{
+	margin-left:42px;
+	width:956px;
+	height:446px;
+	background:url(../img/map6.png) no-repeat 0px 0px;
+}
+#header>span {
+	color: white;
+	font-size: 14px;
+	margin-left: 21px;
+}
+.content_box {
+	width: 1100px;
+	background-color:#fff;
+	margin: 0px auto
+	
+}
+.content {
+	width: 1020px;
+	margin: 30px auto;
+	
+}
+	
+.content p {
+	color: #002e73;
+	font:bold;
+}
+.content p a{
+		color:#8cc562;
+}
+/*内容开始*******************************/
+.content p {
+	font-size: 14px;
+	margin-top: 23px;
+}
+/*页脚开始*******************************/
+.footer {
+	width: 1020px;
+	margin: 0 auto;
+	margin-top: 195px;
+	margin-bottom:137px;
+}
+.footer p {
+	color: #002e73;
+	text-align: center;
+	font-size: 12px;
+}
