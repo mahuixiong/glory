@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * 公共视图控制器
+ * 公共视图控制器fasfasdfds
  * 
  * @author starzouvzcxvxzcvxzcvxzvxzv
  * @since 2014年4月15日 下午4:16:34
