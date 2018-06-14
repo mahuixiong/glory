@@ -17,7 +17,7 @@
 		    		<li class="list-item">
 		    			<label>登录名</label>
 		    			<input type="text" />
-		    		</li>
+		    		</li> 
 		    		<li class="list-item">
 		    			<label>密码</label>
 		    			<input type="text" />
