@@ -5,14 +5,14 @@
 <head>
 	<meta charset="UTF-8">
 	<title>图表查看</title>
-	<link rel="stylesheet" type="text/css" href="../../static/css/reset.css" />
-	<link rel="stylesheet" href="../../static/css/p_chartView.css" />
+	<link rel="stylesheet" type="text/css" href="../../app/css/reset.css" />
+	<link rel="stylesheet" href="../../app/css/p_chartView.css" />
 </head>
-	<script type="text/javascript" src="../../static/js/jquery.js"></script>
-	<script type="text/javascript" src="../../static/js/echarts.min.js"></script>
-	<script type="text/javascript" src="/static/js/person_aa.js" ></script>
+	<script type="text/javascript" src="../../app/js/jquery.js"></script>
+	<script type="text/javascript" src="../../app/js/echarts.min.js"></script>
+	<script type="text/javascript" src="../../app/js/person_aa.js" ></script>
 	<script type="text/javascript">var url="../../rest/";</script>
-	<script type="text/javascript" src="/static/js/hover.js" ></script>
+	<script type="text/javascript" src="../../app/js/hover.js" ></script>
 <body>
 
 	<!-- 内容顶部路由页显示  -->

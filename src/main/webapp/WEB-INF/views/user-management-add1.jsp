@@ -7,17 +7,17 @@
 <meta charset="UTF-8">
 <title>新增用户</title>
 <link rel="stylesheet"
-	href="../../static/css/reset.css" />
+	href="../../app/css/reset.css" />
 <link rel="stylesheet"
-	href="../../static/css/user-management-add.css" />
+	href="../../app/css/user-management-add.css" />
 <link rel="stylesheet" type="text/css"
-	href="../../static/css/calendar.css" />
+	href="../../app/css/calendar.css" />
 
 <script type="text/javascript"
-	src="../../static/js/jquery1.11.3-jquery.min.js"></script>
-<script src="../../static/js/calendar.js"></script>
+	src="../../app/js/jquery1.11.3-jquery.min.js"></script>
+<script src="../../app/js/calendar.js"></script>
 <script type="text/javascript"
-	src="../../static/js/checkUserAddForm.js"
+	src="../../app/js/checkUserAddForm.js"
 	charset="utf-8"></script>
 </head>
 <body>

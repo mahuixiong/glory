@@ -15,6 +15,10 @@
   
   <link href="<%=basePath%>app/css/layui.css" rel="stylesheet">
   <link href="<%=basePath%>app/css/index.css" rel="stylesheet">
+
+  <link href="../../app/css/layui.css" rel="stylesheet">
+  <link href="../../app/css/index.css" rel="stylesheet">
+
   
 </head>
 <body class="layui-layout-body">
@@ -43,7 +47,7 @@
               	<a href="javascript:;">首页</a>
             </li>
               <li class="back_1 layui-nav-item public-ifame-item yhgl dianji">
-              <a href="javascript:;">用户管理</a>
+              <a onclick="categorylist" href="categorylist">用户管理</a>
             </li>
          	  <li class="back_1 layui-nav-item shgl">
             	<a class="" href="javascript:;">审核管理</a>
@@ -123,6 +127,7 @@
 		var arr=[
 			'./introduction2',
 			'./user-management-index',
+			'./usermanagementindex',
 			'./customerList',
 			'./infomanagerList',
 			'./categorylist',
@@ -134,9 +139,14 @@
 			'./person_BrowsingHistory1',
 			'./person_downloadRecord',
 			'./person_updatePassword',
+			'./personchartView',
+			'./personregionalDistribution1',
+			'./personBrowsingHistory1',
+			'./persondownloadRecord',
+			'./personupdatePassword',
 			'./contant',
 			]
-	for(let i=0;i<oLi;i++){
+	for(var i=0;i<oLi;i++){
 		$('.public-ifame-item').eq(i).click(function(){
 				
 				$('#mainframe').attr('src',arr[i])

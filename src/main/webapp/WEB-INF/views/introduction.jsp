@@ -5,9 +5,9 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>项目简介</title>
-		<link rel="stylesheet" href="../../static/css/project introduction.css">
-		<script src="../../static/js/jquery-1.11.0.min.js"></script>
-		<script src="../../static/js/project.js"></script>
+		<link rel="stylesheet" href="../../app/css/project introduction.css">
+		<script src="../../app/js/jquery-1.11.0.min.js"></script>
+		<script src="../../app/js/project.js"></script>
 		</head>
 
 	<body>

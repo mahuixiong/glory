@@ -5,8 +5,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>修改用户</title>
-		<link rel="stylesheet" href="../../static/css/reset.css" />
-		<link rel="stylesheet" href="../../static/css/user-management-modify.css" />
+		<link rel="stylesheet" href="../../app/css/reset.css" />
+		<link rel="stylesheet" href="../../app/css/user-management-modify.css" />
 	</head>
 	<body>
 	
@@ -17,7 +17,7 @@
 		    		<li class="list-item">
 		    			<label>登录名</label>
 		    			<input type="text" />
-		    		</li>
+		    		</li> 
 		    		<li class="list-item">
 		    			<label>密码</label>
 		    			<input type="text" />

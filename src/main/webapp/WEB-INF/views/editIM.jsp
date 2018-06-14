@@ -5,14 +5,14 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>编辑信息</title>
-		<link rel="stylesheet" type="text/css" href="../../static/css/reset.css"/>
-		<link rel="stylesheet" type="text/css" href="../../static/css/editIM.css"?/>		
-		<link rel="stylesheet" href="../../static/css/calendar.css" />
+		<link rel="stylesheet" type="text/css" href="../../app/css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../../app/css/editIM.css"?/>		
+		<link rel="stylesheet" href="../../app/css/calendar.css" />
 		
-		<script src="../../static/js/jquery.js"></script>
-		<script type="text/javascript" src="../../static/js/calendar.js"></script>
-		<script src="../../static/js/editIM.js"></script>
-		<script src="../../static/js/checkUpdateIM.js"></script>
+		<script src="../../app/js/jquery.js"></script>
+		<script type="text/javascript" src="../../app/js/calendar.js"></script>
+		<script src="../../app/js/editIM.js"></script>
+		<script src="../../app/js/checkUpdateIM.js"></script>
 		 
 
 	</head>

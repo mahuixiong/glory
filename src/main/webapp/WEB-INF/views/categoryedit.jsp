@@ -5,8 +5,8 @@
 <head>
 		<meta charset="UTF-8">
 		<title>修改用户</title>
-		<link rel="stylesheet" href="../../static/css/reset.css" />
-		<link rel="stylesheet" href="../../static/css/editdlb.css" />
+		<link rel="stylesheet" href="../../app/css/reset.css" />
+		<link rel="stylesheet" href="../../app/css/editdlb.css" />
 	</head>
 	<body data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-15" data-genuitec-path="/glory/src/main/webapp/WEB-INF/views/categoryedit.jsp" style="height: 310px; width: 1126px;">
 		<div class="user-content" data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-15" data-genuitec-path="/glory/src/main/webapp/WEB-INF/views/categoryedit.jsp">

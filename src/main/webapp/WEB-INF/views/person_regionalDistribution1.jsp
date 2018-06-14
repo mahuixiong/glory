@@ -6,17 +6,17 @@
 <head>
     <meta charset="utf-8">
     <title>地域分布图</title>
-    <script type="text/javascript" src="../../static/js/lib/jquery.js"></script>
-    <script type="text/javascript" src="../../static/js/lib/raphael-min.js"></script>
-    <script type="text/javascript" src="../../static/js/res/chinaMapConfig.js"></script>
-    <script type="text/javascript" src="../../static/js/res/worldMapConfig.js"></script>
-    <script type="text/javascript" src="../../static/js/map.js"></script>
-	<link rel="stylesheet" type="text/css" href="../../static/css/reset.css" />
-	<link rel="stylesheet" href="../../static/css/p_regionalDistribution.css" />
-	<link rel="stylesheet" href="../../static/css/china.css" />
-	<script type="text/javascript" src="../../static/js/echarts.min.js"></script>
-	<script type="text/javascript" src="../../static/js/person_aa.js" ></script>
-	<script type="text/javascript" src="../../static/js/hover.js" ></script>
+    <script type="text/javascript" src="../../app/js/lib/jquery.js"></script>
+    <script type="text/javascript" src="../../app/js/lib/raphael-min.js"></script>
+    <script type="text/javascript" src="../../app/js/res/chinaMapConfig.js"></script>
+    <script type="text/javascript" src="../../app/js/res/worldMapConfig.js"></script>
+    <script type="text/javascript" src="../../app/js/map.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../app/css/reset.css" />
+	<link rel="stylesheet" href="../../app/css/p_regionalDistribution.css" />
+	<link rel="stylesheet" href="../../app/css/china.css" />
+	<script type="text/javascript" src="../../app/js/echarts.min.js"></script>
+	<script type="text/javascript" src="../../app/js/person_aa.js" ></script>
+	<script type="text/javascript" src="../../app/js/hover.js" ></script>
    
    
     <style type="text/css">

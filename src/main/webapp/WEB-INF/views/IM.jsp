@@ -5,11 +5,11 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>信息管理</title>
-		<script src="../../static/js/jquery.js"></script>
-		<script src="../../static/js/IM-index.js"></script>
-		<link rel="stylesheet" type="text/css" href="../../static/css/reset.css"/>
-		<link rel="stylesheet" type="text/css" href="../../static/css/IM-index.css"/>
-		<link rel="stylesheet" type="text/css" href="../../static/css/page-con.css"/>
+		<script src="../../app/js/jquery.js"></script>
+		<script src="../../app/js/IM-index.js"></script>
+		<link rel="stylesheet" type="text/css" href="../../app/css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../../app/css/IM-index.css"/>
+		<link rel="stylesheet" type="text/css" href="../../app/css/page-con.css"/>
 		
 	</head>
 	<body  data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-5" data-genuitec-path="/glory/src/main/webapp/WEB-INF/views/IM.html" style="height: 297px; width:95%;">

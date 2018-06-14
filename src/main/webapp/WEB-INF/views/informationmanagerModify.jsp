@@ -5,11 +5,11 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>用户审核</title>
-		<link rel="stylesheet" href="../../static/css/reset.css" />
-		<link rel="stylesheet" href="../../static/css/customer-management-examine.css" />
-		<link rel="stylesheet" href="../../static/css/calendar.css" />
-		<script type="text/javascript" src="../../static/js/jquery1.11.3-jquery.min.js"></script>
-		<script type="text/javascript" src="../../static/js/calendar.js"></script>
+		<link rel="stylesheet" href="../../app/css/reset.css" />
+		<link rel="stylesheet" href="../../app/css/customer-management-examine.css" />
+		<link rel="stylesheet" href="../../app/css/calendar.css" />
+		<script type="text/javascript" src="../../app/js/jquery1.11.3-jquery.min.js"></script>
+		<script type="text/javascript" src="../../app/js/calendar.js"></script>
 		<style>
 			.cus-content .cus-examine-infolist .examine-list .list-item .list-box{
 				width:15px;

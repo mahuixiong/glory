@@ -5,8 +5,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>新增用户</title>
-		<link rel="stylesheet" href="../../static/css/reset.css" />
-		<link rel="stylesheet" href="../../static/css/user-management-add.css" />
+		<link rel="stylesheet" href="../../app/css/reset.css" />
+		<link rel="stylesheet" href="../../app/css/user-management-add.css" />
 	</head>
 	<body>
 		<div class="cus-header">
