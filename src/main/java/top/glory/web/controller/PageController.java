@@ -20,6 +20,11 @@ public class PageController {
     public String login() {
         return "login";
     }
+    
+    @RequestMapping("introduction2")
+    public String introduction2() {
+    	return "introduction2";
+    }
 
     /**
      * dashboard页
@@ -32,7 +37,7 @@ public class PageController {
     /**
      * 404页
      */
-    @RequestMapping("/superadmin")
+    @RequestMapping("superadmin")
     public String superadmin() {
         return "superadmin";
     }
