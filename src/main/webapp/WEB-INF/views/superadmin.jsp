@@ -8,8 +8,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>农产品毒素数据库</title>
   
-  <link href="../../static/css/layui.css" rel="stylesheet">
-  <link href="../../static/css/index.css" rel="stylesheet">
+  <link href="../../app/css/layui.css" rel="stylesheet">
+  <link href="../../app/css/index.css" rel="stylesheet">
   
 </head>
 <body class="layui-layout-body">

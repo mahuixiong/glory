@@ -5,12 +5,12 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<link rel="stylesheet" type="text/css" href="../../static/css/reset.css"/>
-	<link rel="stylesheet" href="../../static/css/a_pm.css" />
-	<link rel="stylesheet" type="text/css" href="../../static/css/page.css"/>
+	<link rel="stylesheet" type="text/css" href="../../app/css/reset.css"/>
+	<link rel="stylesheet" href="../../app/css/a_pm.css" />
+	<link rel="stylesheet" type="text/css" href="../../app/css/page.css"/>
 </head>
-<script type="text/javascript" src="../../static/js/jquery.js" ></script>
-<script type="text/javascript" src="../../static/js/browsing.js" ></script>
+<script type="text/javascript" src="../../app/js/jquery.js" ></script>
+<script type="text/javascript" src="../../app/js/browsing.js" ></script>
 <body>
 	<header class="header">
 		<div class="header_box box">

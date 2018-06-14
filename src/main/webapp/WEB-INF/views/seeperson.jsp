@@ -5,11 +5,11 @@
 <head>
     <meta charset="UTF-8">
     <title>个人中心</title>
-    	<link rel="stylesheet" type="text/css" href="../../static/css/reset1.css"/>
-		<link rel="stylesheet" type="text/css" href="../../static/css/calendar.css"/>
-		<script src="../../static/js/jquery.js"></script>
-		<script src="../../static/js/calendar.js"></script>
-		<script src="../../static/js/addIM.js"></script>
+    	<link rel="stylesheet" type="text/css" href="../../app/css/reset1.css"/>
+		<link rel="stylesheet" type="text/css" href="../../app/css/calendar.css"/>
+		<script src="../../app/js/jquery.js"></script>
+		<script src="../../app/js/calendar.js"></script>
+		<script src="../../app/js/addIM.js"></script>
     <style>
         *{
             font-family: "微软雅黑";

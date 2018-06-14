@@ -5,8 +5,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>新增大类别</title>
-		<link rel="stylesheet" href="../../static/css/reset.css" />
-		<link rel="stylesheet" href="../../static/css/adddlb.css" />
+		<link rel="stylesheet" href="../../app/css/reset.css" />
+		<link rel="stylesheet" href="../../app/css/adddlb.css" />
 	</head>
 	<body>
 		<div class="user-content">

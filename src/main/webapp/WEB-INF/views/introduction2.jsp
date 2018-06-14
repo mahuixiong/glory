@@ -6,8 +6,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>项目简介</title>
-		<link rel="stylesheet" href="../../static/css/project introduction2.css">
-		<script src="../../static/js/jquery-1.11.0.min.js"></script>
+		<link rel="stylesheet" href="../../app/css/project introduction2.css">
+		<script src="../../app/js/jquery-1.11.0.min.js"></script>
 		
 		</head>
 

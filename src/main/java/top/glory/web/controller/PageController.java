@@ -24,9 +24,9 @@ public class PageController {
     /**
      * dashboard页
      */
-    @RequestMapping("/dashboard")
+    @RequestMapping("/IM")
     public String dashboard() {
-        return "dashboard";
+        return "IM";
     }
 
     /**

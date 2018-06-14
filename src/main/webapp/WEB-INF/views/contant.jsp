@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8">
 <title>联系我们</title>
-<link rel="stylesheet" href="../../static/css/contant us.css">
+<link rel="stylesheet" href="../../app/css/contant us.css">
 </head>
 
 <body>

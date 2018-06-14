@@ -5,8 +5,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>客户修改</title>
-		<link rel="stylesheet" href="../../static/css/reset.css" />
-		<link rel="stylesheet" href="../../static/css/customer-management-modify.css" />
+		<link rel="stylesheet" href="../../app/css/reset.css" />
+		<link rel="stylesheet" href="../../app/css/customer-management-modify.css" />
 	</head>
 	<body>
 		<div class="cus-header">

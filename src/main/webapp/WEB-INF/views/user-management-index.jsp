@@ -5,9 +5,9 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>用户管理</title>
-		<link rel="stylesheet" href="../../static/css/reset.css" />
-		<link rel="stylesheet" href="../../static/css/user-management-index.css" />
-		<link rel="stylesheet" href="../../static/css/page-con.css" />
+		<link rel="stylesheet" href="../../app/css/reset.css" />
+		<link rel="stylesheet" href="../../app/css/user-management-index.css" />
+		<link rel="stylesheet" href="../../app/css/page-con.css" />
 	</head>
 	<body>
 		<!--<div class="cus-header">-->

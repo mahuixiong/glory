@@ -5,12 +5,12 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<link rel="stylesheet" type="text/css" href="../../static/css/reset.css"/>
-	<link rel="stylesheet" href="../../static/css/p_downloadRecord.css" />
-	<link rel="stylesheet" type="text/css" href="../../static/css/page.css"/>
+	<link rel="stylesheet" type="text/css" href="../../app/css/reset.css"/>
+	<link rel="stylesheet" href="../../app/css/p_downloadRecord.css" />
+	<link rel="stylesheet" type="text/css" href="../../app/css/page.css"/>
 </head>
-<script type="text/javascript" src="../../static/js/jquery.js" ></script>
-<script type="text/javascript" src="../../static/js/browsing.js" ></script>
+<script type="text/javascript" src="../../app/js/jquery.js" ></script>
+<script type="text/javascript" src="../../app/js/browsing.js" ></script>
 <body data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-55" data-genuitec-path="/glory/src/main/webapp/WEB-INF/views/person_downloadRecord.jsp" style="height: 309px; width: 1126px;">
 	
 	<!--

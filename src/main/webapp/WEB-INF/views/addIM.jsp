@@ -12,18 +12,18 @@
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
 	
-		<link rel="stylesheet" type="text/css" href="../../static/css/reset.css"/>
-		<link rel="stylesheet" type="text/css" href="../../static/css/addIM.css"/>
-		<link rel="stylesheet" type="text/css" href="../../static/css/calendar.css"/>
+		<link rel="stylesheet" type="text/css" href="../../app/css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../../app/css/addIM.css"/>
+		<link rel="stylesheet" type="text/css" href="../../app/css/calendar.css"/>
 		<script src="../../static/js/jquery.js"></script>
 		
 		
 		
 		
 
-		<script src="../../static/js/calendar.js"></script>
-		<script src="../../static/js/addIM.js"></script>
-		<script src="../../static/js/checkAddIM.js"></script>
+		<script src="../../app/js/calendar.js"></script>
+		<script src="../../app/js/addIM.js"></script>
+		<script src="../../app/js/checkAddIM.js"></script>
   </head>
  <body data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-13" data-genuitec-path="/glory/src/main/webapp/WEB-INF/views/addIM.jsp" class="" style="height: 310px; width: 1126px;">
 		<div class="contaner" data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-13" data-genuitec-path="/glory/src/main/webapp/WEB-INF/views/addIM.jsp">
