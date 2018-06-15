@@ -21,40 +21,4 @@ public class PageController {
         return "login";
     }
 
-    /**
-     * dashboard页
-     */
-    @RequestMapping("/IM")
-    public String dashboard() {
-        return "IM";
-    }
-
-    /**
-     * 404页
-     */
-    @RequestMapping("/superadmin")
-    public String superadmin() {
-        return "superadmin";
-    }
-    @RequestMapping("/404")
-    public String error404() {
-        return "404";
-    }
-
-    /**
-     * 401页
-     */
-    @RequestMapping("/401")
-    public String error401() {
-        return "401";
-    }
-
-    /**
-     * 500页
-     */
-    @RequestMapping("/500")
-    public String error500() {
-        return "500";
-    }
-
 }
