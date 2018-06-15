@@ -11,6 +11,7 @@
 <link href="../../app/css/index.css" rel="stylesheet">
 </head>
 <body class="layui-layout-body">
+<<<<<<< HEAD
 	<div class="layui-layout layui-layout-admin">
 		<div class="layui-header">
 			<ul class="layui-nav" style="text-align: center;">
@@ -112,6 +113,7 @@
 	<script src="../../app/js/layui.all.js"></script>
 	<script>
 
+
     //JavaScript代码区域
     layui.use('element', function(){
     
@@ -136,7 +138,6 @@
     
     var oLi=$('.public-ifame-item').length;
 		var arr=[
-
 			'introduction2',
 			'usermanagementindex',
 			'customerList',
