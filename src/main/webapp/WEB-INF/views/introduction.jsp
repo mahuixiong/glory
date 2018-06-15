@@ -47,9 +47,9 @@
     			<span>水果类包含：苹果，梨，葡萄等多种类别</span>
     			</div>
     			</div>
-    			<a>
+    			</a>
   				</li>
-  				
+
   				<li class="column_4" onclick="shousuo(5)"><img src="../../app/img/col_list_4.png" alt="">
 				<span class="c1">香辛类</span>
 				<div class="text">

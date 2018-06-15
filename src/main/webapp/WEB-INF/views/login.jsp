@@ -12,10 +12,10 @@
   <base href="<%=basePath%>">  
    <meta http-equiv="Content-Type" charset="UTF-8">
     <title>登录</title>
-	<link rel="stylesheet" type="text/css" href="<%=basePath %>/app/css/reset.css"/>
-	<link rel="stylesheet" href="<%=basePath %>/app/css/login.css" />
-	<script type="text/javascript" src="<%=basePath %>/app/js/jquery1.11.3-jquery.min.js"></script>
-	<script type="text/javascript" src="<%=basePath %>/app/js/checkLogin.js" ></script>
+	<link rel="stylesheet" type="text/css" href="<%=basePath %>app/css/reset.css"/>
+	<link rel="stylesheet" href="<%=basePath %>app/css/login.css" />
+	<script type="text/javascript" src="<%=basePath %>app/js/jquery1.11.3-jquery.min.js"></script>
+	<script type="text/javascript" src="<%=basePath %>app/js/checkLogin.js" ></script>
   </head>
   <body>
   <div class="contaner">

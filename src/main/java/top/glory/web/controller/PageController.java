@@ -20,6 +20,11 @@ public class PageController {
     public String login() {
         return "login";
     }
+    
+    @RequestMapping("introduction2")
+    public String introduction2() {
+    	return "introduction2";
+    }
 
     /**
      * dashboard页
@@ -35,13 +40,6 @@ public class PageController {
     @RequestMapping("access_iam")
     public String access_iam() {
         return "access_iam";
-    }
-/*
- * 
- */
-    @RequestMapping("introduction2")
-    public String introduction2() {
-        return "introduction2";
     }
     /*
      * 
@@ -174,6 +172,7 @@ public class PageController {
     /*
      * 
      */
+
     @RequestMapping("customermanagementexamine")
     public String customermanagementexamine() {
         return "customer-management-examine";
@@ -273,6 +272,7 @@ public class PageController {
     /*
      * 
      */
+
     @RequestMapping("superadmin")
     public String superadmin() {
         return "superadmin";
