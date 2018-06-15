@@ -1,21 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%
+<%--     <%
     String path=request.getContextPath();
     String basePath=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";  
-    %>
+    %> --%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
-<base href="<%=basePath%>">  
+<%-- <base href="<%=basePath%>">   --%>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>农产品毒素数据库</title>
   
-  <link href="<%=basePath%>app/css/layui.css" rel="stylesheet">
-  <link href="<%=basePath%>app/css/index.css" rel="stylesheet">
-
   <link href="../../app/css/layui.css" rel="stylesheet">
   <link href="../../app/css/index.css" rel="stylesheet">
 
@@ -34,7 +31,7 @@
       <!-- <div class="layui-logo">中国农产品真菌毒素及产毒真菌污染数据库</div> -->
       <ul class="layui-nav layui-layout-right">
         <li class="layui-nav-item"><a href="javascript:;"></a></li>
-        <li class="layui-nav-item"><a href="javascript:if(confirm('确实要退出吗?'))location='<%=basePath%>/rest/user/logout'" class="header_end">退出</a></li>
+        <li class="layui-nav-item"><a href="javascript:if(confirm('确实要退出吗?'))location='../../rest/user/logout'" class="header_end">退出</a></li>
       </ul>
     </div>
     
@@ -47,7 +44,7 @@
               	<a href="javascript:;">首页</a>
             </li>
               <li class="back_1 layui-nav-item public-ifame-item yhgl dianji">
-              <a onclick="categorylist" href="categorylist">用户管理</a>
+              <a href="javascript:;">用户管理</a>
             </li>
          	  <li class="back_1 layui-nav-item shgl">
             	<a class="" href="javascript:;">审核管理</a>
@@ -97,8 +94,8 @@
       </div>
     </div>
   </div>
-  <script src="<%=basePath%>app/js/jquery-1.11.0.min.js"></script>
-	<script src="<%=basePath%>app/js/layui.all.js"></script>
+  <script src="../../app/js/jquery-1.11.0.min.js"></script>
+	<script src="../../app/js/layui.all.js"></script>
   <script>
 
     //JavaScript代码区域
@@ -125,26 +122,26 @@
     
     var oLi=$('.public-ifame-item').length;
 		var arr=[
-			'./introduction2',
-			'./user-management-index',
-			'./usermanagementindex',
-			'./customerList',
-			'./infomanagerList',
-			'./categorylist',
-			'./toxinlist',
-			'./IM',
-			'./introduction',
-			'./person_chartView',
-			'./person_regionalDistribution1',
-			'./person_BrowsingHistory1',
-			'./person_downloadRecord',
-			'./person_updatePassword',
-			'./personchartView',
-			'./personregionalDistribution1',
-			'./personBrowsingHistory1',
-			'./persondownloadRecord',
-			'./personupdatePassword',
-			'./contant',
+			'introduction2',
+			'user-management-index',
+			'usermanagementindex',
+			'customerList',
+			'infomanagerList',
+			'categorylist',
+			'toxinlist',
+			'IM',
+			'introduction',
+			'person_chartView',
+			'person_regionalDistribution1',
+			'person_BrowsingHistory1',
+			'person_downloadRecord',
+			'person_updatePassword',
+			'personchartView',
+			'personregionalDistribution1',
+			'personBrowsingHistory1',
+			'persondownloadRecord',
+			'personupdatePassword',
+			'contant',
 			]
 	for(var i=0;i<oLi;i++){
 		$('.public-ifame-item').eq(i).click(function(){
@@ -225,7 +222,7 @@
     
     	
     	function person(){
-			$('#mainframe').attr('src',"seeperson.jsp")
+			$('#mainframe').attr('src',"seeperson")
 			$(this).toggleClass('activ')
 	}
 	

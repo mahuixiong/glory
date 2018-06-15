@@ -1,19 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-     <%
-    String path=request.getContextPath();
-    String basePath=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-    %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
 	<head>
-	<base href="<%=basePath%>"> 
 		<meta charset="UTF-8">
 		<title>项目简介</title>
 
-		<link rel="stylesheet" href="<%=basePath%>app/css/project introduction2.css">
-		<script src="<%=basePath%>app/js/jquery-1.11.0.min.js"></script>
 		<link rel="stylesheet" href="../../app/css/project introduction2.css">
 		<script src="../../app/js/jquery-1.11.0.min.js"></script>
 		</head>
@@ -35,22 +28,22 @@
 		<!--内容结束-->
 		<div class="col_box">
 			<ul class="column">
-				<li><img src="<%=basePath%>app/img/col_1.png" alt=""></li>
-				<li><img src="<%=basePath%>app/img/col_2.png" alt=""></li>
-				<li class="san"><img src="<%=basePath%>app/img/col_3.png" alt=""></li>
+				<li><img src="../../app/img/col_1.png" alt=""></li>
+				<li><img src="../../app/img/col_2.png" alt=""></li>
+				<li class="san"><img src="../../app/img/col_3.png" alt=""></li>
 				
 				
 				<div class="clearfix"></div>
 			</ul>
 			<ul class="column_list">
-				<li class="column_1" onclick="shousuo(1)"><img src="<%=basePath%>app/img/1.jpg" alt="">
+				<li class="column_1" onclick="shousuo(1)"><img src="../../app/img/1.jpg" alt="">
 				<span>谷物类</span>
 				<div class="imgtext" style="display: none"> 
     			<span>谷物类包含：<br>玉米，小麦，稻谷等多种类别</span>
     			</div>
     			
   				</li>
-  				<li class="column_2" onclick="shousuo(2)"><img src="<%=basePath%>app/img/2.jpg" alt="">
+  				<li class="column_2" onclick="shousuo(2)"><img src="../../app/img/2.jpg" alt="">
 				<span>油料类</span>
 				
     			<div class="imgtext" style="display: none;"> 
@@ -58,7 +51,7 @@
     			
     			</div>
   				</li>
-  				<li class="column_3" onclick="shousuo(3)"><img src="<%=basePath%>app/img/3.jpg" alt="">
+  				<li class="column_3" onclick="shousuo(3)"><img src="../../app/img/3.jpg" alt="">
 				<span>水果类</span>
 				
     			<div class="imgtext" style="display: none;"> 
@@ -66,7 +59,7 @@
     			
     			</div>
   				</li>
-  				<li class="column_4" onclick="shousuo(4)"><img src="<%=basePath%>app/img/5.png" alt="">
+  				<li class="column_4" onclick="shousuo(4)"><img src="../../app/img/5.png" alt="">
 				<span>香辛类</span>
 				
     			<div class="imgtext" style="display: none;"> 
@@ -74,7 +67,7 @@
     			
     			</div>
   				</li>
- 	  			<li class="column_5" onclick="shousuo(5)"><img src="<%=basePath%>app/img/4.png" alt="">
+ 	  			<li class="column_5" onclick="shousuo(5)"><img src="../../app/img/4.png" alt="">
 				<span>坚果类</span>
 				
     			<div class="imgtext" style="display: none;"> 
@@ -82,7 +75,7 @@
     			
     			</div>
   				</li>
- 	  			<li style="margin-right:0;" class="column_6" onclick="shousuo(6)"><img src="<%=basePath%>app/img/6.png" alt="">
+ 	  			<li style="margin-right:0;" class="column_6" onclick="shousuo(6)"><img src="../../app/img/6.png" alt="">
 				<span>饲料类</span>
 				
     			<div class="imgtext" style="display: none;"> 
