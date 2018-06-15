@@ -11,7 +11,6 @@
 <link href="../../app/css/index.css" rel="stylesheet">
 </head>
 <body class="layui-layout-body">
-<<<<<<< HEAD
 	<div class="layui-layout layui-layout-admin">
 		<div class="layui-header">
 			<ul class="layui-nav" style="text-align: center;">
