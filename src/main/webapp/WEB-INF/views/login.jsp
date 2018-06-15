@@ -27,7 +27,7 @@
 			<form class="login-form" action="rest/user/login" method="get" id="fm1">
 				<div class="loginbox-info">
 					<ul> 
-						<li><input type="text" name="login_name"  class="login-name" placeholder="请输入登录账号/手机号" value="" maxlength="15")"/></li>
+						<li><input type="text" name="login_name"  class="login-name" placeholder="请输入登录账号/手机号" value="" maxlength="15"/></li>
 						<span id="login_name"></span>
 						<li><input type="password" name="password"  class="login-pwd" placeholder="请输入密码" value=""  maxlength="15"/></li>
 						<span id="password"></span>
@@ -41,25 +41,25 @@
 		</div>
 	</div>
   </body>
-  <script src="assets/plugins/jquery-1.10.2.min.js" type="text/javascript"></script>
- <script src="assets/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
-<script src="assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
- <script src="assets/plugins/bootstrap-hover-dropdown/twitter-bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
-<script src="assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
-<script src="assets/plugins/jquery.blockui.min.js" type="text/javascript"></script>
-<script src="assets/plugins/jquery.cokie.min.js" type="text/javascript"></script>
-<script src="assets/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+<script src="../../assets/plugins/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="../" type="text/javascript"></script>
+<script src="../../assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../../assets/plugins/bootstrap-hover-dropdown/twitter-bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+<script src="../../assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="../../assets/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="../../assets/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+<script src="../../assets/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 <!-- BEGIN PAGE LEVEL PLUGINS -->
- <script src="assets/plugins/jquery-validation/dist/jquery.validate.min.js" type="text/javascript"></script>
-<script src="assets/plugins/backstretch/jquery.backstretch.min.js" type="text/javascript"></script>
-<script type="text/javascript" src="assets/plugins/select2/select2.min.js"></script>
+<script src="../../assets/plugins/jquery-validation/dist/jquery.validate.min.js" type="text/javascript"></script>
+<script src="../../assets/plugins/backstretch/jquery.backstretch.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="../../assets/plugins/select2/select2.min.js"></script>
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
-<script src="assets/scripts/app.js" type="text/javascript"></script>
-<script src="assets/scripts/login-soft.js" type="text/javascript"></script>
+<script src="../../assets/scripts/app.js" type="text/javascript"></script>
+<script src="../../assets/scripts/login-soft.js" type="text/javascript"></script>
 
-<script src="app/lib/security/sha256.js" type="text/javascript"></script>
+<script src="../../app/lib/security/sha256.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
   <script>
 		jQuery(document).ready(function() {     

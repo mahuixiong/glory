@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Download_historyExample {
+public class LookhistoryExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public Download_historyExample() {
+    public LookhistoryExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -105,63 +105,63 @@ public class Download_historyExample {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
-        public Criteria andDIdIsNull() {
-            addCriterion("d_id is null");
+        public Criteria andLIdIsNull() {
+            addCriterion("l_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andDIdIsNotNull() {
-            addCriterion("d_id is not null");
+        public Criteria andLIdIsNotNull() {
+            addCriterion("l_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andDIdEqualTo(Integer value) {
-            addCriterion("d_id =", value, "dId");
+        public Criteria andLIdEqualTo(Integer value) {
+            addCriterion("l_id =", value, "lId");
             return (Criteria) this;
         }
 
-        public Criteria andDIdNotEqualTo(Integer value) {
-            addCriterion("d_id <>", value, "dId");
+        public Criteria andLIdNotEqualTo(Integer value) {
+            addCriterion("l_id <>", value, "lId");
             return (Criteria) this;
         }
 
-        public Criteria andDIdGreaterThan(Integer value) {
-            addCriterion("d_id >", value, "dId");
+        public Criteria andLIdGreaterThan(Integer value) {
+            addCriterion("l_id >", value, "lId");
             return (Criteria) this;
         }
 
-        public Criteria andDIdGreaterThanOrEqualTo(Integer value) {
-            addCriterion("d_id >=", value, "dId");
+        public Criteria andLIdGreaterThanOrEqualTo(Integer value) {
+            addCriterion("l_id >=", value, "lId");
             return (Criteria) this;
         }
 
-        public Criteria andDIdLessThan(Integer value) {
-            addCriterion("d_id <", value, "dId");
+        public Criteria andLIdLessThan(Integer value) {
+            addCriterion("l_id <", value, "lId");
             return (Criteria) this;
         }
 
-        public Criteria andDIdLessThanOrEqualTo(Integer value) {
-            addCriterion("d_id <=", value, "dId");
+        public Criteria andLIdLessThanOrEqualTo(Integer value) {
+            addCriterion("l_id <=", value, "lId");
             return (Criteria) this;
         }
 
-        public Criteria andDIdIn(List<Integer> values) {
-            addCriterion("d_id in", values, "dId");
+        public Criteria andLIdIn(List<Integer> values) {
+            addCriterion("l_id in", values, "lId");
             return (Criteria) this;
         }
 
-        public Criteria andDIdNotIn(List<Integer> values) {
-            addCriterion("d_id not in", values, "dId");
+        public Criteria andLIdNotIn(List<Integer> values) {
+            addCriterion("l_id not in", values, "lId");
             return (Criteria) this;
         }
 
-        public Criteria andDIdBetween(Integer value1, Integer value2) {
-            addCriterion("d_id between", value1, value2, "dId");
+        public Criteria andLIdBetween(Integer value1, Integer value2) {
+            addCriterion("l_id between", value1, value2, "lId");
             return (Criteria) this;
         }
 
-        public Criteria andDIdNotBetween(Integer value1, Integer value2) {
-            addCriterion("d_id not between", value1, value2, "dId");
+        public Criteria andLIdNotBetween(Integer value1, Integer value2) {
+            addCriterion("l_id not between", value1, value2, "lId");
             return (Criteria) this;
         }
 

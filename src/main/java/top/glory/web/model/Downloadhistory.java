@@ -2,8 +2,8 @@ package top.glory.web.model;
 
 import java.util.Date;
 
-public class Look_history {
-    private Integer lId;
+public class Downloadhistory {
+    private Integer dId;
 
     private Integer sampleId;
 
@@ -11,12 +11,12 @@ public class Look_history {
 
     private Date createTime;
 
-    public Integer getlId() {
-        return lId;
+    public Integer getdId() {
+        return dId;
     }
 
-    public void setlId(Integer lId) {
-        this.lId = lId;
+    public void setdId(Integer dId) {
+        this.dId = dId;
     }
 
     public Integer getSampleId() {
