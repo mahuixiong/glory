@@ -19,7 +19,7 @@
 		<div class="col_box">
 
 			<ul class="column_list">
-				<li class="column_1"><img src="../../static/img/col_list_1.jpg" alt="">
+				<li class="column_1"><img src="../../app/img/col_list_1.jpg" alt="">
 				<span class="c1">谷物类</span>
 				<a href="person_first2.html">
 				<div class="text">
@@ -29,7 +29,7 @@
     			</div>
     			</a>
   				</li>
-  				<li class="column_2" onclick="shousuo(2)"><img src="../../static/img/col_list_2.jpg" alt="">
+  				<li class="column_2" onclick="shousuo(2)"><img src="../../app/img/col_list_2.jpg" alt="">
 				<span class="c1">油料类</span>
 				<a href="person_first2.html">
 				<div class="text">
@@ -39,7 +39,7 @@
     			</div>
     			</a>
   				</li>
-  				<li class="column_3" onclick="shousuo(3)"><img src="../../static/img/col_list_3.jpg" alt="">
+  				<li class="column_3" onclick="shousuo(3)"><img src="../../app/img/col_list_3.jpg" alt="">
 				<span class="c1">水果类</span>
 				<a href="person_first2.html">
 				<div class="text">
@@ -50,7 +50,7 @@
     			<a>
   				</li>
   				
-  				<li class="column_4" onclick="shousuo(5)"><img src="../../static/img/col_list_4.png" alt="">
+  				<li class="column_4" onclick="shousuo(5)"><img src="../../app/img/col_list_4.png" alt="">
 				<span class="c1">香辛类</span>
 				<div class="text">
     			<div class="imgtext" style="display: none;"> 
@@ -59,7 +59,7 @@
     			</div>
   				</li>
   				
-  				<li class="column_5" onclick="shousuo(4)"><img src="../../static/img/col_list_5.png" alt="">
+  				<li class="column_5" onclick="shousuo(4)"><img src="../../app/img/col_list_5.png" alt="">
 				<span class="c1">坚果类</span>
 				<div class="text">
     			<div class="imgtext" style="display: none;"> 
@@ -68,7 +68,7 @@
     			</div>
   				</li>
  	  			
- 	  			<li class="column_6" onclick="shousuo(6)"><img src="../../static/img/col_list_6.png" alt="">
+ 	  			<li class="column_6" onclick="shousuo(6)"><img src="../../app/img/col_list_6.png" alt="">
 				<span class="c1">饲料类</span>
 				<div class="text">
     			<div class="imgtext" style="display: none;"> 
