@@ -11,7 +11,6 @@
 <link href="../../app/css/index.css" rel="stylesheet">
 </head>
 <body class="layui-layout-body">
-<<<<<<< HEAD
 	<div class="layui-layout layui-layout-admin">
 		<div class="layui-header">
 			<ul class="layui-nav" style="text-align: center;">
@@ -19,7 +18,6 @@
 					style="font-size: 30px; font-family: '楷体'; color: #fff; font-weight: 700; line-height: 60px; display: block;">
 						中国农产品真菌毒素及产毒菌污染数据库 </a></li>
 			</ul>
-			<!-- <div class="layui-logo">中国农产品真菌毒素及产毒真菌污染数据库</div> -->
 			<ul class="layui-nav layui-layout-right">
 				<li class="layui-nav-item"><a href="javascript:;"></a></li>
 				<li class="layui-nav-item"><a
