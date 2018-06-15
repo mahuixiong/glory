@@ -328,5 +328,5 @@ public class PageController {
     public String error500() {
         return "500";
     }
-    
+
 }
