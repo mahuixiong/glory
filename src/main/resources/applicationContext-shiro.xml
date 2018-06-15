@@ -19,9 +19,15 @@
                 /assets/** = anon
                 
                 <!-- 登录页允许访问 -->
+<<<<<<< HEAD
                  /rest/user/login = anon
                 <!-- 其他资源需要认证 -->
                 /** = authc
+=======
+                /rest/user/login = anon
+                <!-- 其他资源需要认证 -->
+                /** = anon <!-- authc -->
+>>>>>>> 208b65e83e5f2dbe73aeffa4a81281d2a068aada
             </value>
         </property>
     </bean>

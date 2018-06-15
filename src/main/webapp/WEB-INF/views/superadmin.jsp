@@ -38,7 +38,7 @@
               	<a href="javascript:;">首页</a>
             </li>
               <li class="back_1 layui-nav-item public-ifame-item yhgl dianji">
-              <a onclick="categorylist" href="categorylist">用户管理</a>
+              <a  href="javascript:;">用户管理</a>
             </li>
          	  <li class="back_1 layui-nav-item shgl">
             	<a class="" href="javascript:;">审核管理</a>
@@ -88,8 +88,8 @@
       </div>
     </div>
   </div>
-  <script src="../../static/js/jquery-1.11.0.min.js"></script>
-	<script src="../../static/js/layui.all.js"></script>
+  <script src="../../app/js/jquery-1.11.0.min.js"></script>
+	<script src="../../app/js/layui.all.js"></script>
   <script>
 
     //JavaScript代码区域
@@ -116,24 +116,23 @@
     
     var oLi=$('.public-ifame-item').length;
 		var arr=[
-			'./introduction2',
-			'./usermanagementindex',
-			'./customerList',
-			'./infomanagerList',
-			'./categorylist',
-			'./toxinlist',
-			'./IM',
-			'./introduction',
-			'./personchartView',
-			'./personregionalDistribution1',
-			'./personBrowsingHistory1',
-			'./persondownloadRecord',
-			'./personupdatePassword',
-			'./contant',
+			'introduction2',
+			'usermanagementindex',
+			'customerList',
+			'infomanagerList',
+			'categorylist',
+			'toxinlist',
+			'IM',
+			'introduction',
+			'personchartView',
+			'personregionalDistribution1',
+			'personBrowsingHistory1',
+			'persondownloadRecord',
+			'personupdatePassword',
+			'contant',
 			]
-	for(var i=0;i<oLi;i++){
+	for(let i=0;i<oLi;i++){
 		$('.public-ifame-item').eq(i).click(function(){
-				
 				$('#mainframe').attr('src',arr[i])
 		})
 	}
