@@ -173,6 +173,13 @@
         <!-- springframe end -->
 
         <!-- mybatis start-->
+        <!-- mybatis分页插件依赖 -->
+			<dependency>
+   		 	<groupId>com.github.pagehelper</groupId>
+  			  <artifactId>pagehelper</artifactId>
+  		 	 <version>4.0.0</version>
+			</dependency>
+        
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
@@ -331,6 +338,7 @@
             <artifactId>aspectjrt</artifactId>
             <version>${aspectj.version}</version>
         </dependency>
+
 
         <!-- hibernate-validator -->
         <dependency>

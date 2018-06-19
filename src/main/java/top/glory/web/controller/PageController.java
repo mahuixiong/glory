@@ -16,7 +16,7 @@ public class PageController {
     /**
      * 登录页
      */
-    @RequestMapping("/login")
+    @RequestMapping("login")
     public String login() {
         return "login";
     }
@@ -29,7 +29,7 @@ public class PageController {
     /**
      * dashboard页
      */
-    @RequestMapping("/IM")
+    @RequestMapping("IM")
     public String IM() {
         return "IM";
     }
@@ -284,6 +284,13 @@ public class PageController {
     public String toxinadd() {
         return "toxinadd";
     }
+    /*
+     * 
+     */
+    @RequestMapping("toxinedit")
+    public String toxinedit() {
+        return "toxinedit";
+    }
     /**
      * 
      */
@@ -294,7 +301,7 @@ public class PageController {
     /**
      * 
      */
-    @RequestMapping("user-management-add1")
+    @RequestMapping("usermanagementadd1")
     public String usermanagementadd1() {
         return "user-management-add1";
     }

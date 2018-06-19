@@ -82,6 +82,10 @@
       order by ${orderByClause}
     </if>
   </select>
+  <!-- 根据cropcategory查询记录 -->
+  <select id="selectBycropcate" resultMap="BaseResultMap">
+  SELECT * FROM crop_category WHERE crop_category=#{cropcategory}
+  </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />

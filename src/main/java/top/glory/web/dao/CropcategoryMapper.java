@@ -6,6 +6,10 @@ import top.glory.web.model.Cropcategory;
 import top.glory.web.model.CropcategoryExample;
 
 public interface CropcategoryMapper {
+	/*
+	 * 根据cropcategory查询记录
+	 */
+	List<Cropcategory> selectBycropcate(@Param("cropcategory") String cropcategory);
     int countByExample(CropcategoryExample example);
 
     int deleteByExample(CropcategoryExample example);

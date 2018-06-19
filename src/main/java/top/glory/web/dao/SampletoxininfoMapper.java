@@ -6,6 +6,10 @@ import top.glory.web.model.Sampletoxininfo;
 import top.glory.web.model.SampletoxininfoExample;
 
 public interface SampletoxininfoMapper {
+	/*
+	 * 根据tpye查询记录
+	 */
+	List<Sampletoxininfo> selectToxininfoByTpey(@Param("toxintype") String toxintype);
     int countByExample(SampletoxininfoExample example);
 
     int deleteByExample(SampletoxininfoExample example);

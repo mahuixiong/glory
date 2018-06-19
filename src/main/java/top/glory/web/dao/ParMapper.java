@@ -6,6 +6,14 @@ import top.glory.web.model.Par;
 import top.glory.web.model.ParExample;
 
 public interface ParMapper {
+	/*
+	 * 修改par毒素
+	 */
+	void udpatepar(@Param("breedId")Integer breedId,@Param("parId")Integer parId,@Param("par")Float par);
+	/*
+	 * 根据breedid查询记录
+	 */
+	List<Par> selectparById(@Param("breedId")Integer breedId);
     int countByExample(ParExample example);
 
     int deleteByExample(ParExample example);
