@@ -157,6 +157,9 @@ public class CategorylistServiceImpl implements CategorylistService{
 		if(list==null){
 			return Msg.fail();
 		}else{
+		ParExample example=new ParExample();
+		example.or().andToxinIdEqualTo(Id);
+		this.parMapper.deleteByExample(example);
 		this.toxininfoMapper.deleteByPrimaryKey(Id);
 		return Msg.success();
 		}
@@ -240,6 +243,51 @@ public class CategorylistServiceImpl implements CategorylistService{
 		example.or().andBreedIdEqualTo(breedid);
 		this.parMapper.deleteByExample(example);
 		return Msg.success();
+	}
+	/*
+	 * 查询所有species记录
+	 */
+	@Override
+	public List<Cropspecies> selectAllspecies() {
+		CropspeciesExample example=new CropspeciesExample();
+		return this.cropspeciesMapper.selectByExample(example);
+	}
+	/*
+	 * 添加毒素
+	 */
+	@Override
+	public Msg addtoxininfo(String toxintype, Integer state,
+			String[] speciesname, String[] par, String[] speciesid) {
+		SampletoxininfoExample example=new SampletoxininfoExample();
+		example.or().andToxinTypeEqualTo(toxintype);
+		List<Sampletoxininfo> toxininfoList=this.toxininfoMapper.selectByExample(example);
+		if (toxininfoList.size()>0) {
+			return Msg.fail();
+		}else {
+			Sampletoxininfo toxininfo=new Sampletoxininfo();
+			toxininfo.setState(state);
+			toxininfo.setToxinType(toxintype);
+			this.toxininfoMapper.insert(toxininfo);
+			SampletoxininfoExample example1=new SampletoxininfoExample();
+			example1.or().andToxinTypeEqualTo(toxintype);
+			List<Sampletoxininfo> toxininfoList1=this.toxininfoMapper.selectByExample(example1);
+			toxininfo=toxininfoList1.get(0);
+			for (int i = 0; i < speciesname.length; i++) {
+				Float pars=Float.parseFloat(par[i]);
+				Integer speciesids=Integer.parseInt(speciesid[i]);
+				if (pars!=0) {
+					Par par2=new Par();
+					par2.setBreedId(speciesids);
+					par2.setBreedName(speciesname[i]);
+					par2.setPar(pars);
+					par2.setToxinId(toxininfo.getId());
+					par2.setToxinName(toxintype);
+					this.parMapper.insert(par2);
+				}
+			}
+			return Msg.success();
+		}
+		
 	}
 
 }

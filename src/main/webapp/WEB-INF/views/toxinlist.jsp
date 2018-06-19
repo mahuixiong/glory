@@ -17,7 +17,7 @@
 		<div class="user-content">
 			<p class="user-admin"><!-- <span>当前页面 : <span><a class="active">毒素管理</a> --></p>
 			<div class="user-search">
-				<p><a class="user-add" href="toxinadd">新增毒素</a></p>
+				<p><a class="user-add" href="selectAllspecies">新增毒素</a></p>
 			</div>
 			<table class="user-info">
 				<tbody><tr class="info-first info-item">
@@ -79,9 +79,9 @@
 			    })
 			    function data(data){
 			    	if(data.code==200){
-			    		alert("类别已删除");
+			    		alert("毒素已删除");
 			    	}else{
-			    		alert("类别不存在");
+			    		alert("毒素不存在");
 			    	}
 			    }
 		    }else{

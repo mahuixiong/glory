@@ -68,7 +68,4 @@
 	  }
 	  
 	</script>
-	<script type="text/javascript">
-	   
-	</script>
 </html>

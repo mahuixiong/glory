@@ -169,6 +169,27 @@ public class CropcategoryController {
 	@ResponseBody
 	public Msg deletespeciesById(@RequestParam("breedid")Integer breedid){
 		return this.categorylistService.deletespeciesById(breedid);
-		
+	}
+	/*
+	 * 查询所有species记录
+	 */
+	@RequestMapping("selectAllspecies")
+	public String selectAllspecies(Map<String, Object>map){
+		List<Cropspecies> list=this.categorylistService.selectAllspecies();
+		map.put("species", list);
+		return "toxinadd";
+	}
+	/*
+	 * 添加毒素
+	 */
+	@RequestMapping("addtoxininfo")
+	@ResponseBody
+	public Msg addtoxininfo(HttpServletRequest request){
+		String toxintype=request.getParameter("toxintype");
+		Integer state=Integer.parseInt(request.getParameter("state"));
+		String[] speciesname=request.getParameterValues("speciesname");
+		String[] par=request.getParameterValues("par");
+		String[] speciesid=request.getParameterValues("speciesid");
+		return this.categorylistService.addtoxininfo(toxintype, state, speciesname, par, speciesid);
 	}
 }

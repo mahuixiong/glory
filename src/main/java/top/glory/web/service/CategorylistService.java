@@ -72,4 +72,12 @@ public interface CategorylistService {
 	 * 删除species小类别和par中小类别对应的毒素记录
 	 */
 	public Msg deletespeciesById(Integer breedid);
+	/*
+	 * 查询所有species记录
+	 */
+	public List<Cropspecies> selectAllspecies();
+	/*
+	 * 添加毒素
+	 */
+	public Msg addtoxininfo(String toxintype,Integer state,String[] speciesname,String[] par,String[] speciesid);
 }
