@@ -6,6 +6,9 @@ import top.glory.web.model.Roles;
 import top.glory.web.model.RolesExample;
 
 public interface RolesMapper {
+    //通过id查权限
+    List<Roles> selectRolesByUserId(@Param("rid") Integer rid);
+
     int countByExample(RolesExample example);
 
     int deleteByExample(RolesExample example);

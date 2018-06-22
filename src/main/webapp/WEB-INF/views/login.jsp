@@ -6,7 +6,6 @@
     
     
     %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
   <head>
   <base href="<%=basePath%>">  
@@ -24,17 +23,19 @@
 			<div class="loginbox-head">
 				<p>登录</p>
 			</div>
-			<form class="login-form" action="rest/user/login" method="get" id="fm1">
+			<%--用的是SecurityRealm的验证登录 用的是shiro默认的加密方法 class="login-form"--%>
+			<%--<form class="login-form" action="rest/user/login" method="get" id="fm1">--%>
+			<%--用的是MuchRealm的验证登录 自定义的登录方式  优点：不同用户的密码即使一样，存到数据库的也是不一致的--%>
+			<form action="rest/user/login" method="get" id="fm1">
 				<div class="loginbox-info">
 					<ul> 
-						<li><input type="text" name="login_name"  class="login-name" placeholder="请输入登录账号/手机号" value="" maxlength="15"/></li>
+						<li><input type="text" name="loginName"  class="login-name" placeholder="请输入登录账号/手机号" value="admin123" maxlength="15"/></li>
 						<span id="login_name"></span>
-						<li><input type="password" name="password"  class="login-pwd" placeholder="请输入密码" value=""  maxlength="15"/></li>
+						<li><input type="password" name="password"  class="login-pwd" placeholder="请输入密码" value="123456"  maxlength="15"/></li>
 						<span id="password"></span>
-						
-						<li><input type="button" value="登录" class="login-sin" onclick="window.location='http://localhost:8080/quick4j/rest/page/superadmin'"/></li>
-						<li class="login-fpwd"><a class="login-res" href="../../html/forgetpwd.html">忘记密码?</a><a class="login-register" href="../../html/register.html">立即注册</a></li>
-						
+						<%--<li><input type="checkbox" value="1" name="remeber">记住我</li>--%>
+						<li><input type="submit" value="登录" class="login-sin"/></li>
+						<li class="login-fpwd"><a class="login-res" href="<%=basePath %>rest/page/forgetpwd">忘记密码?</a><a class="login-register" href="<%=basePath %>rest/page/register">立即注册</a></li>
 					</ul>
 				</div>
 			</form>
