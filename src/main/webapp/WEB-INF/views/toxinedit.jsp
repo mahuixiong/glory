@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding=UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -18,15 +18,12 @@
 		    	<input type="hidden" name="id" value="1">
 		    		<li class="list-item">
 		    			<label>毒素名称</label>
-		    			<input type="text" name="toxin_type" value="DON">
+		    			<input type="text" name="toxin_type" id="type" value="${sampletoxininfo.toxinType}">
 		    		</li>
 		    		<li class="list-item">
 		    			<label>状态</label>
-		    			
-		    			
 		    			<input type="radio" name="state" value="1">启用
 		    			<input type="radio" name="state" value="0" checked="checked">禁用
-		    			
 		    		</li>
 		    	</ul>
 		    	<div class="modify-option">
@@ -38,22 +35,32 @@
 			
 		    </div>
 		
-	
+	<script type="text/javascript" src="../../app/js/jquery1.11.3-jquery.min.js"></script>
 	<script type="text/javascript">
 	   function xiugai(){
-	     if(confirm("你确定要修改吗?")){
-	        document.forms[0].submit();
-	     }else{
-	        return false;
-	     }
-	   }
-	   function delte(id){
-	     if(confirm("你确定要删除吗？")){
-	       
-	        window.location.href="speciesdelete?specid="+id;
-	     }else{
-	        return false;
-	     }
+		   var radio=document.getElementsByName("state");
+			var selectvalue=null; 
+			for(var i=0;i<radio.length;i++){
+		       if(radio[i].checked==true) {
+		            selectvalue=radio[i].value;
+		            break;
+		       }
+		}
+			var Id=${sampletoxininfo.id};
+			var type=document.getElementById("type").value;
+			$.ajax({
+				url:"updatetoxininfo",
+				data:{"Id":Id,"toxintype":type,"state":selectvalue},
+				success:data
+			})
+			function data(data){
+				if(data.code==200){
+					alert("修改成功");
+				}else{
+					alert("修改失败，类别名已存在");
+				}
+				
+			}
 	   }
 	</script>
 

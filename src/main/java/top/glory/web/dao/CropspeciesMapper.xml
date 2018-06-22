@@ -136,6 +136,10 @@
       </if>
     </trim>
   </insert>
+  <!-- 根据id查询species数据 -->
+  <select id="selectSpeciesById" resultMap="BaseResultMap" resultType="java.lang.Integer">
+  SELECT * FROM crop_species WHERE crop_category_id=#{Id,jdbcType=INTEGER}
+  </select>
   <select id="countByExample" parameterType="top.glory.web.model.CropspeciesExample" resultType="java.lang.Integer" >
     select count(*) from crop_species
     <if test="_parameter != null" >
@@ -171,6 +175,10 @@
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
+  </update>
+  <!-- 根据id修改state -->
+  <update id="updatespeciesById" parameterType="top.glory.web.model.Cropspecies">
+  UPDATE crop_species SET state=#{state} WHERE id=#{breedId}
   </update>
   <update id="updateByPrimaryKeySelective" parameterType="top.glory.web.model.Cropspecies" >
     update crop_species

@@ -60,4 +60,12 @@ public class Par {
     public void setPar(Float par) {
         this.par = par;
     }
+
+	@Override
+	public String toString() {
+		return "Par [id=" + id + ", breedId=" + breedId + ", breedName="
+				+ breedName + ", toxinId=" + toxinId + ", toxinName="
+				+ toxinName + ", par=" + par + "]";
+	}
+    
 }

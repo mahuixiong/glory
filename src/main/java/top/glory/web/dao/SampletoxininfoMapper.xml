@@ -82,6 +82,10 @@
       order by ${orderByClause}
     </if>
   </select>
+  <!-- 根据tpye查询记录 -->
+  <select id="selectToxininfoByTpey" resultMap="BaseResultMap">
+  SELECT * FROM sample_toxin_info WHERE toxin_type=#{toxintype}
+  </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />

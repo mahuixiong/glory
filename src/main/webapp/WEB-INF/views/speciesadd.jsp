@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -13,112 +14,21 @@
 			<p class="user-admin"><!-- <span>当前页面 : <span><a>大类别管理/</a><a class="active">新增类别</a> --></p>
 		    <div class="user-add-infolist">
 		    	<p class="user-add-title">新增类别</p>
-		    	<form action="speciesadd" method="post">
+		    	<form id="form1" method="post">
 		    	<ul class="add-list">
 		    		<li class="list-item">
 		    			<label>类别名称</label>
-		    			<input type="text" name="crop_species" id="speciesname">
+		    			<input type="text" name="breedname" id="breedname" value="">
+		    			<input type="hidden"name="cateid" id="cateid" readonly="readonly"value="${cateid}">
 		    		</li>
 		    		
-			    		<li class="list-item">
-			    			<label>毒素名称</label>
-			    			<input type="text" name="toxin_name" id="speciesname" readonly="readonly" value="伏马菌素">
-			    			<input type="hidden" name="toxin_id" id="speciesname" readonly="readonly" value="2">
-			    		</li>
-			    		<li class="list-item">
-			    			<label>标准含量</label>
-			    			<input type="text" name="par" id="speciesname" value="0">
-			    		</li>
-		    		
-			    		<li class="list-item">
-			    			<label>毒素名称</label>
-			    			<input type="text" name="toxin_name" id="speciesname" readonly="readonly" value="玉米赤霉烯酮">
-			    			<input type="hidden" name="toxin_id" id="speciesname" readonly="readonly" value="3">
-			    		</li>
-			    		<li class="list-item">
-			    			<label>标准含量</label>
-			    			<input type="text" name="par" id="speciesname" value="0">
-			    		</li>
-		    		
-			    		<li class="list-item">
-			    			<label>毒素名称</label>
-			    			<input type="text" name="toxin_name" id="speciesname" readonly="readonly" value="黄曲霉毒素总量">
-			    			<input type="hidden" name="toxin_id" id="speciesname" readonly="readonly" value="4">
-			    		</li>
-			    		<li class="list-item">
-			    			<label>标准含量</label>
-			    			<input type="text" name="par" id="speciesname" value="0">
-			    		</li>
-		    		
-			    		<li class="list-item">
-			    			<label>毒素名称</label>
-			    			<input type="text" name="toxin_name" id="speciesname" readonly="readonly" value="黄曲霉毒素B1">
-			    			<input type="hidden" name="toxin_id" id="speciesname" readonly="readonly" value="5">
-			    		</li>
-			    		<li class="list-item">
-			    			<label>标准含量</label>
-			    			<input type="text" name="par" id="speciesname" value="0">
-			    		</li>
-		    		
-			    		<li class="list-item">
-			    			<label>毒素名称</label>
-			    			<input type="text" name="toxin_name" id="speciesname" readonly="readonly" value="黄曲霉毒素G1">
-			    			<input type="hidden" name="toxin_id" id="speciesname" readonly="readonly" value="7">
-			    		</li>
-			    		<li class="list-item">
-			    			<label>标准含量</label>
-			    			<input type="text" name="par" id="speciesname" value="0">
-			    		</li>
-		    		
-			    		<li class="list-item">
-			    			<label>毒素名称</label>
-			    			<input type="text" name="toxin_name" id="speciesname" readonly="readonly" value="黄曲霉毒素G2">
-			    			<input type="hidden" name="toxin_id" id="speciesname" readonly="readonly" value="8">
-			    		</li>
-			    		<li class="list-item">
-			    			<label>标准含量</label>
-			    			<input type="text" name="par" id="speciesname" value="0">
-			    		</li>
-		    		
-			    		<li class="list-item">
-			    			<label>毒素名称</label>
-			    			<input type="text" name="toxin_name" id="speciesname" readonly="readonly" value="黄曲霉毒素M1">
-			    			<input type="hidden" name="toxin_id" id="speciesname" readonly="readonly" value="9">
-			    		</li>
-			    		<li class="list-item">
-			    			<label>标准含量</label>
-			    			<input type="text" name="par" id="speciesname" value="0">
-			    		</li>
-		    		
-			    		<li class="list-item">
-			    			<label>毒素名称</label>
-			    			<input type="text" name="toxin_name" id="speciesname" readonly="readonly" value="黄曲霉毒素M2">
-			    			<input type="hidden" name="toxin_id" id="speciesname" readonly="readonly" value="10">
-			    		</li>
-			    		<li class="list-item">
-			    			<label>标准含量</label>
-			    			<input type="text" name="par" id="speciesname" value="0">
-			    		</li>
-		    		
-			    		<li class="list-item">
-			    			<label>毒素名称</label>
-			    			<input type="text" name="toxin_name" id="speciesname" readonly="readonly" value="展青霉毒素">
-			    			<input type="hidden" name="toxin_id" id="speciesname" readonly="readonly" value="11">
-			    		</li>
-			    		<li class="list-item">
-			    			<label>标准含量</label>
-			    			<input type="text" name="par" id="speciesname" value="0">
-			    		</li>
-		    		
-			    		<li class="list-item">
-			    			<label>毒素名称</label>
-			    			<input type="text" name="toxin_name" id="speciesname" readonly="readonly" value="赭曲霉毒素A">
-			    			<input type="hidden" name="toxin_id" id="speciesname" readonly="readonly" value="12">
-			    		</li>
-			    		<li class="list-item">
-			    			<label>标准含量</label>
-			    			<input type="text" name="par" id="speciesname" value="0">
-			    		</li>
+			    		<c:forEach items="${toxininfo}" var="toxininfo">
+						<li class="list-item"><label>毒素名称</label> 
+						<input type="text"name="toxintype" id="toxintype" readonly="readonly"value="${toxininfo.toxinType}"> 
+						<input type="hidden"name="toxinid" id="toxinid" readonly="readonly"value="${toxininfo.id}"></li>
+						<li class="list-item"><label>标准含量</label>
+						 <input type="text" name="par" id="par" value="0"></li>
+						</c:forEach>
 		    		
 		    		<li class="list-item">
 		    			<label>状态</label>
@@ -133,21 +43,22 @@
 		    </div>
 		</div>
 	</body>
-	<script type="text/javascript" src="../../static/js/jquery-2.1.0.js"></script>
+	<script type="text/javascript" src="../../app/js/jquery1.11.3-jquery.min.js"></script>
 	<script type="text/javascript">
 	   function baocun(){
-	   var speciesname=$("#speciesname").val();
-	   var url="jiaoyanspecies";
-	   var parms={"speciesname":speciesname};
-	   $.post(url,parms,function(date){
-	      var  name=JSON.parse(date);
-	      if(name!=true){
-	        document.forms[0].submit();
-	      }else{
-	        alert("该类别名已经存在！");
-	        return false;
-	      }
-	   })
+	  $.ajax({
+		  url:"addpar",
+		  data:$('#form1').serialize(),
+		  dataType: "JSON",
+		  success:data
+	  })
+	  function data(data){
+		  if(data.code==200){
+			  alert("保存成功");
+		  }else{
+			  alert("类别名存在");
+		  }
+	  }
 	    
 	   }
 	</script>

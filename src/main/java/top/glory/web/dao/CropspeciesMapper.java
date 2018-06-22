@@ -6,6 +6,14 @@ import top.glory.web.model.Cropspecies;
 import top.glory.web.model.CropspeciesExample;
 
 public interface CropspeciesMapper {
+	/*
+	 * 根据id修改state
+	 */
+	void updatespeciesById(@Param("breedId")Integer breedId,@Param("state")Integer state);
+	/*
+	 * 根据id查询species数据
+	 */
+	List<Cropspecies> selectSpeciesById(@Param("Id")Integer Id);
     int countByExample(CropspeciesExample example);
 
     int deleteByExample(CropspeciesExample example);

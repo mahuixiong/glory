@@ -152,6 +152,10 @@
       </if>
     </trim>
   </insert>
+  <!-- 根据breedid查询记录 -->
+  <select id="selectparById" resultMap="BaseResultMap">
+  SELECT * FROM par WHERE breed_id=#{breedId}
+  </select>
   <select id="countByExample" parameterType="top.glory.web.model.ParExample" resultType="java.lang.Integer" >
     select count(*) from par
     <if test="_parameter != null" >
@@ -183,6 +187,10 @@
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
+  </update>
+  <!-- 修改par的标准含量 -->
+  <update id="udpatepar" parameterType="top.glory.web.model.Par">
+  UPDATE par SET par=#{par} WHERE breed_id=#{breedId} AND toxin_id=#{parId}
   </update>
   <update id="updateByExample" parameterType="map" >
     update par
