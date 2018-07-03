@@ -20,7 +20,17 @@ public class PageController {
     public String login() {
         return "login";
     }
-    
+    @RequestMapping("register")
+    public String register()
+    {
+        return "register";
+    }
+    //忘记密码
+    @RequestMapping("forgetpwd")
+    public String forgetpwd() {
+        return "forgetpwd";
+    }
+
     @RequestMapping("introduction2")
     public String introduction2() {
     	return "introduction2";

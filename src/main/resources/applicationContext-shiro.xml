@@ -10,27 +10,34 @@
     <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
         <property name="securityManager" ref="securityManager"/>
         <property name="loginUrl" value="/rest/page/login"/>
-        <property name="successUrl" value="/rest/index"/>
+        <property name="successUrl" value="/rest/page/superadmin"/>
         <property name="unauthorizedUrl" value="/rest/page/401"/>
+        <!--filterChainDefinitionMap，filterChainDefinitions谁写在后面按谁的执行 连个不是叠加 是各自的访问权限-->
+        <!--<property name="filterChainDefinitionMap" ref="filterChainDefinitionMap"></property>-->
         <property name="filterChainDefinitions">
             <value>
                 <!-- 静态资源允许访问 -->
                 /app/** = anon
                 /assets/** = anon
-                
                 <!-- 登录页允许访问 -->
-
-                 /rest/user/login = anon
-                <!-- 其他资源需要认证 -->
-                /** = authc
-
                 /rest/user/login = anon
-                <!-- 其他资源需要认证 -->
-                /** = anon <!-- authc -->
+                /rest/page/register= anon
+                /rest/user/register=anon
+                /rest/user/judge=anon
+                /rest/page/forgetpwd= anon
+                /rest/user/forgetpwd=anon
+                /rest/user/selectupdate=anon
+                /rest/page/superadmin=user  <!--user登录、记住我都可以进入-->
 
+                <!--/rest/page/register=roles[superadmin] 权限也是SimpleAuthorizationInfo设置的和页面shrio是一样的 相当于@RequiresPermissions设置的-->
+                <!--auth,roles[user]认证后的且是user权限-->
+                <!-- 其他资源需要认证 -->
+                /** = authc <!-- authc -->
             </value>
         </property>
     </bean>
+    <!--配置一个bean 该bean 实际上是一个Map 通过实例工厂方法的方式-->
+    <bean id="filterChainDefinitionMap" factory-bean="filterChainDefinitionMapBuilder" factory-method="buildFilterChainDefinitionMap"></bean>
 
     <!-- 缓存管理器 使用Ehcache实现 -->
     <bean id="shiroEhcacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
@@ -44,14 +51,23 @@
     <bean id="sessionManager" class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">
         <property name="sessionDAO" ref="sessionDAO"/>
     </bean>
-
+    <bean id="muchRealm" class="top.glory.web.security.MuchRealm">
+        <property name="credentialsMatcher">
+            <bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
+                <property name="hashAlgorithmName" value="MD5"></property>
+                <property name="hashIterations" value="1024"></property>
+            </bean>
+        </property>
+    </bean>
     <!-- 安全管理器 -->
     <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
         <property name="realms">
             <list>
                 <ref bean="securityRealm"/>
+                <ref bean="muchRealm"/>
             </list>
         </property>
+        <!--<property name="rememberMeManager.cookie.maxAge" value="10"></property> 设置记住我时间-->
         <!-- cacheManager,集合spring缓存工厂 -->
         <!-- <property name="cacheManager" ref="shiroEhcacheManager" /> -->
         <!-- <property name="sessionManager" ref="sessionManager" /> -->

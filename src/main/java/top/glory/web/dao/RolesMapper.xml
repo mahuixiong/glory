@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="top.glory.web.dao.RolesMapper" >
+  <!--权限  通过用户id查看当前的权限-->
+  <select id="selectRolesByUserId" parameterType="Integer" resultType="Roles">
+    select * from roles where rid=#{rid}
+  </select>
   <resultMap id="BaseResultMap" type="top.glory.web.model.Roles" >
     <id column="rid" property="rid" jdbcType="INTEGER" />
     <result column="role" property="role" jdbcType="VARCHAR" />

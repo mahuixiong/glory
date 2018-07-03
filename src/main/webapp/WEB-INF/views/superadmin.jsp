@@ -1,3 +1,4 @@
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -34,9 +35,12 @@
 					<li class="back_1 layui-nav-item public-ifame-item index dianji">
 						<a href="javascript:;">首页</a>
 					</li>
+					<shiro:hasRole name="admin">
 					<li class="back_1 layui-nav-item public-ifame-item yhgl dianji">
 						<a href="javascript:;">用户管理</a>
 					</li>
+					</shiro:hasRole>
+					<shiro:hasRole name="customerman">
 					<li class="back_1 layui-nav-item shgl"><a class=""
 						href="javascript:;">审核管理</a>
 						<dl class="layui-nav-child">
@@ -47,6 +51,8 @@
 								<a href="javascript:;" class="public-ifame-item dianji">信息管理员审核</a>
 							</dd>
 						</dl></li>
+					</shiro:hasRole>
+					<shiro:hasRole name="messageman">
 					<li class="back_1 layui-nav-item sjlr"><a class=""
 						href="javascript:;">数据录入</a>
 						<dl class="layui-nav-child">
@@ -60,6 +66,8 @@
 								<a href="javascript:;" class="public-ifame-item xxlr dianji">样品信息录入</a>
 							</dd>
 						</dl></li>
+					</shiro:hasRole>
+					<shiro:hasRole name="customer">
 					<li class="back_1 layui-nav-item sjll"><a class=""
 						href="javascript:;">数据浏览</a>
 						<dl class="layui-nav-child">
@@ -82,6 +90,7 @@
 								<a href="javascript:;" class="public-ifame-item dianji">修改密码</a>
 							</dd>
 						</dl></li>
+					</shiro:hasRole>
 					<li class="back_1 layui-nav-item public-ifame-item aboutus dianji">
 						<a href="javascript:;">联系我们</a>
 					</li>
@@ -95,7 +104,7 @@
 					<span class="zhanshi"
 						style="flex: 1; padding-left: 2.5%; font-size: 18px; font-weight: 900">首页</span>
 					<i class="cont_bar_icon"></i>
-					<p>欢迎，超级管理</p>
+					<p>欢迎，<font color="red">${userInfo.username}</font> </p>
 					<p onclick="person()" class="act">个人中心&nbsp;&nbsp;&nbsp;></p>
 				</div>
 				<!-- 内容主体区域 -->
@@ -110,7 +119,6 @@
 	<script src="../../app/js/jquery-1.11.0.min.js"></script>
 	<script src="../../app/js/layui.all.js"></script>
 	<script>
-
 
     //JavaScript代码区域
     layui.use('element', function(){
