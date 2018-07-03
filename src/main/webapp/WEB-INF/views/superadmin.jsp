@@ -1,7 +1,12 @@
 <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%
+	String path=request.getContextPath();
+	String basePath=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+
+
+%>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -141,24 +146,86 @@
      	$('.back_1').children('a').css("color","#4898FF !important")
      	  */
     })
-    
+
     var oLi=$('.public-ifame-item').length;
-		var arr=[
-			'introduction2',
-			'usermanagementindex',
-			'customerList',
-			'infomanagerList',
-			'categorylists?page=1',
-			'toxinlists?Page=1',
-			'IM',
-			'introduction',
-			'personchartView',
-			'personregionalDistribution1',
-			'personBrowsingHistory1',
-			'persondownloadRecord',
-			'personupdatePassword',
-			'contant',
-			]
+    if(${userInfo.role==1}) {
+        var arr = [
+            'introduction2',//首页
+            './usermanagementindex',//用户管理
+            'contant',//联系我们
+
+        ]
+    }
+    if(${userInfo.role==2}) {
+        var arr = [
+            'introduction2',//首页
+            'categorylists?page=1', //农产品类别
+            'toxinlists?Page=1', 	//毒素管理
+            'IM',					//样品信息录入
+            'contant',//联系我们
+        ]
+    }
+    if(${userInfo.role==3})
+	{
+        var arr=[
+            'introduction2',//首页
+            'customerList',			//客户审核
+            'infomanagerList',		//信息管理员审核
+            'contant',//联系我们
+
+        ]
+	}
+    if(${userInfo.role==4}) {
+        var arr = [
+            'introduction2',//首页
+            './usermanagementindex',//用户管理
+            'customerList',			//客户审核
+            'infomanagerList',		//信息管理员审核
+            'categorylists?page=1', //农产品类别
+            'toxinlists?Page=1', 	//毒素管理
+            'IM',					//样品信息录入
+            'introduction',			//数据查看
+            'personchartView',		//图表查看
+            'personregionalDistribution1',//地域分布图
+            'personBrowsingHistory1',//浏览记录
+            'persondownloadRecord', //下载记录
+            'personupdatePassword',//修改密码
+            'contant',//联系我们
+
+        ]
+    }
+    if(${userInfo.role==5}) {
+        var arr = [
+            'introduction2',//首页
+            'introduction',			//数据查看
+            'personchartView',		//图表查看
+            'personregionalDistribution1',//地域分布图
+            'personBrowsingHistory1',//浏览记录
+            'persondownloadRecord', //下载记录
+            'personupdatePassword',//修改密码
+            'contant',//联系我们
+
+        ]
+    }
+	if(${userInfo.role==6}) {
+        var arr = [
+            'introduction2',//首页
+            './usermanagementindex',//用户管理
+            'customerList',			//客户审核
+            'infomanagerList',		//信息管理员审核
+            'categorylists?page=1', //农产品类别
+            'toxinlists?Page=1', 	//毒素管理
+            'IM',					//样品信息录入
+            'introduction',			//数据查看
+            'personchartView',		//图表查看
+            'personregionalDistribution1',//地域分布图
+            'personBrowsingHistory1',//浏览记录
+            'persondownloadRecord', //下载记录
+            'personupdatePassword',//修改密码
+            'contant',//联系我们
+
+        ]
+    }
 	for(let i=0;i<oLi;i++){
 		$('.public-ifame-item').eq(i).click(function(){
 				$('#mainframe').attr('src',arr[i])
@@ -237,7 +304,7 @@
     
     	
     	function person(){
-			$('#mainframe').attr('src',"seeperson.jsp")
+			$('#mainframe').attr('src',"http://localhost:8080/rest/user/showAllUserInfoById?id=+${userInfo.id}")
 			$(this).toggleClass('activ')
 	}
 	

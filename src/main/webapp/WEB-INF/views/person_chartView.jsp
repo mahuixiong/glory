@@ -80,8 +80,48 @@
 						series: []
 				};
 				
-					
-			
+
+//				    var du1=$("id").value();//所有毒
+//				for(var i=0;i<4;i++)
+//				{
+//                    if(du1!=null)
+//					{
+//                        shu[i]=du1
+//						i++
+//					}
+//                    if(du2!=null)
+//                    {
+//                        shu[i]=du1
+//                        i++s
+//                    }
+//				}
+                var su=new Array()
+                su[0]=2
+                su[1]=3
+                su[2]=4
+                su[3]=5
+                su[4]=6
+                var shu=new Array()
+                shu[0]="a"
+                shu[1]="b"
+                shu[2]="c"
+                shu[3]="d"
+                shu[4]="e"
+				var m='';
+					var k="";
+				for(var i=0;i<shu.length;i++)
+				{
+					m+=shu[i]
+					k+=su[i]
+					if(i!=shu.length-1)
+					{
+					    k+=","
+					}
+
+				}
+
+                var a=["2.36","3.55","2.11","6.7","0.55"]
+
 					option = {
 						title : {
 							text: '毒素含量统计图',
@@ -107,7 +147,8 @@
 						xAxis : [
 							{
 								type : 'category',
-								data : [ "a","b","c","d","e"]
+								data : m
+
 							}
 						],
 						yAxis : [
@@ -119,8 +160,8 @@
 							{
 								name:'毒素含量',
 								type:'bar',
-								data:[ "2.36","3.55","2.11","6.7","0.55"]
-
+								data: a
+//                                    ["2.36","3.55","2.11","6.7","0.55"]
 							},]
 					};
 					myChart.clear();

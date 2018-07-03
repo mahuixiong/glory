@@ -37,7 +37,7 @@ function checkloginName() {
 // 名字判断
 function checkusername() {
     var username = $("[name=username]").val()
-    if (/[\u4e00-\u9fa5a-zA-Z0-9]{3,16}/.test(username)) {
+    if (/[\u4e00-\u9fa5a-zA-Z0-9]{2,16}/.test(username)) {
         $("#spusername").html("名字可以")
         $("#spusername").css("color","blue")
         ok2 = true

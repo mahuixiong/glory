@@ -6,7 +6,7 @@
 
 	<head>
 		<meta charset="utf-8" />
-		<title>用户管理</title>
+		<title>毒素管理</title>
 		<link rel="stylesheet" href="../../app/css/reset.css" />
 		<link rel="stylesheet" href="../../app/css/dlb.css" />
 		<link rel="stylesheet" href="../../app/css/page-con.css" />

@@ -44,9 +44,9 @@ public class PageController {
         return "IM";
     }
     /*
-     * 
-     * 
+     *
      */
+
     @RequestMapping("access_iam")
     public String access_iam() {
         return "access_iam";
@@ -56,7 +56,8 @@ public class PageController {
      */
     @RequestMapping("usermanagementindex")
     public String usermanagementindex() {
-        return "user-management-index";
+        return "redirect:/rest/user/showAllData";
+//        return "user-management-index";
     }
     /*
      * 
@@ -64,14 +65,16 @@ public class PageController {
     
     @RequestMapping("customerList")
     public String customerList() {
-        return "customerList";
+        return "redirect:/rest/user/selectAllUser";
+//        return "customerList";
     }
     /*
      * 
      */
     @RequestMapping("infomanagerList")
     public String infomanagerList() {
-        return "infomanagerList";
+        return "redirect:/rest/user/selectAllUser1";
+//        return "infomanagerList";
     }
     /*
      * 

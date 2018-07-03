@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -139,26 +140,26 @@
 <body data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-47" data-genuitec-path="/glory/src/main/webapp/WEB-INF/views/person.jsp" style="height: 310px; width: 1126px;">
 
 <div class="biaodan" data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-47" data-genuitec-path="/glory/src/main/webapp/WEB-INF/views/person.jsp">
-    <form action="updatePersonalMsg" id="fm1">
+    <form action="/rest/user/updateAllUser" id="fm1">
+        <input type="hidden" name="id" value="${user.id}">
+        <input type="hidden" name="loginName" value="${user.loginName}">
         <div>
-        
-        	
             <table>
                 <tbody><tr>
                     <td>姓名</td>
-                    <td><input type="text" name="username" value="超级管理"></td>
+                    <td><input type="text" name="username" value="${user.username}"></td>
                 </tr>
                 <tr>
                     <td>出生日期</td>
                     <td class="feikong">
-						<input class="dd1" type="text" name="birthday" id="dt" value="2018-05-08" readonly="readonly" placeholder="选择日期">
+						<input class="dd1" type="text" name="mybirthday" id="dt" value="<fmt:formatDate value='${user.birthday}' pattern='yyyy-MM-dd'/>" readonly="readonly" placeholder="选择日期">
 						<i id="dd" style="top: 78px; left: 180px; width: 280px; height: 330px; z-index: 999; display: none;" class="calendar calendar-modal calendar-d"><div class="calendar-inner" style="width: 280px;"><div class="calendar-views"><div class="view view-date" style="width: 280px;"><div class="calendar-hd"><a href="javascript:;" data-calendar-display-date="" class="calendar-display">2018/<span class="m">4</span></a><div class="calendar-arrow"><span class="prev" title="上一月" data-calendar-arrow-date="">&lt;</span><span class="next" title="下一月" data-calendar-arrow-date="">&gt;</span></div></div><div class="calendar-ct" style="width: 280px; height: 280px;"><ol class="week"><li style="width:40px;height:40px;line-height:40px">日</li><li style="width:40px;height:40px;line-height:40px">一</li><li style="width:40px;height:40px;line-height:40px">二</li><li style="width:40px;height:40px;line-height:40px">三</li><li style="width:40px;height:40px;line-height:40px">四</li><li style="width:40px;height:40px;line-height:40px">五</li><li style="width:40px;height:40px;line-height:40px">六</li></ol><ul class="date-items"><li style="width: 280px;"><ol class="days"><li style="width:40px;height:40px;line-height:40px" class="old" data-calendar-day="">25</li><li style="width:40px;height:40px;line-height:40px" class="old" data-calendar-day="">26</li><li style="width:40px;height:40px;line-height:40px" class="old" data-calendar-day="">27</li><li style="width:40px;height:40px;line-height:40px" class="old" data-calendar-day="">28</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">1</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">2</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">3</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">4</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">5</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">6</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">7</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">8</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">9</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">10</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">11</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">12</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">13</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">14</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">15</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">16</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">17</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">18</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">19</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">20</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">21</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">22</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">23</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">24</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">25</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">26</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">27</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">28</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">29</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">30</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">31</li><li style="width:40px;height:40px;line-height:40px" class="new" data-calendar-day="">1</li><li style="width:40px;height:40px;line-height:40px" class="new" data-calendar-day="">2</li><li style="width:40px;height:40px;line-height:40px" class="new" data-calendar-day="">3</li><li style="width:40px;height:40px;line-height:40px" class="new" data-calendar-day="">4</li><li style="width:40px;height:40px;line-height:40px" class="new" data-calendar-day="">5</li><li style="width:40px;height:40px;line-height:40px" class="new" data-calendar-day="">6</li><li style="width:40px;height:40px;line-height:40px" class="new" data-calendar-day="">7</li></ol></li><li style="width: 280px;"><ol class="days"><li style="width:40px;height:40px;line-height:40px" class="old" data-calendar-day="">25</li><li style="width:40px;height:40px;line-height:40px" class="old" data-calendar-day="">26</li><li style="width:40px;height:40px;line-height:40px" class="old" data-calendar-day="">27</li><li style="width:40px;height:40px;line-height:40px" class="old" data-calendar-day="">28</li><li style="width:40px;height:40px;line-height:40px" class="old" data-calendar-day="">29</li><li style="width:40px;height:40px;line-height:40px" class="old" data-calendar-day="">30</li><li style="width:40px;height:40px;line-height:40px" class="old" data-calendar-day="">31</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">1</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">2</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">3</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">4</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">5</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">6</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">7</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">8</li><li style="width:40px;height:40px;line-height:40px" class=" now" data-calendar-day="">9</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">10</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">11</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">12</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">13</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">14</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">15</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">16</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">17</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">18</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">19</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">20</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">21</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">22</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">23</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">24</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">25</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">26</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">27</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">28</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">29</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">30</li><li style="width:40px;height:40px;line-height:40px" class="new" data-calendar-day="">1</li><li style="width:40px;height:40px;line-height:40px" class="new" data-calendar-day="">2</li><li style="width:40px;height:40px;line-height:40px" class="new" data-calendar-day="">3</li><li style="width:40px;height:40px;line-height:40px" class="new" data-calendar-day="">4</li><li style="width:40px;height:40px;line-height:40px" class="new" data-calendar-day="">5</li></ol></li><li style="width: 280px;"><ol class="days"><li style="width:40px;height:40px;line-height:40px" class="old" data-calendar-day="">29</li><li style="width:40px;height:40px;line-height:40px" class="old" data-calendar-day="">30</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">1</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">2</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">3</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">4</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">5</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">6</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">7</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">8</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">9</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">10</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">11</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">12</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">13</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">14</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">15</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">16</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">17</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">18</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">19</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">20</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">21</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">22</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">23</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">24</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">25</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">26</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">27</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">28</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">29</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">30</li><li style="width:40px;height:40px;line-height:40px" class="" data-calendar-day="">31</li><li style="width:40px;height:40px;line-height:40px" class="new" data-calendar-day="">1</li><li style="width:40px;height:40px;line-height:40px" class="new" data-calendar-day="">2</li><li style="width:40px;height:40px;line-height:40px" class="new" data-calendar-day="">3</li><li style="width:40px;height:40px;line-height:40px" class="new" data-calendar-day="">4</li><li style="width:40px;height:40px;line-height:40px" class="new" data-calendar-day="">5</li><li style="width:40px;height:40px;line-height:40px" class="new" data-calendar-day="">6</li><li style="width:40px;height:40px;line-height:40px" class="new" data-calendar-day="">7</li><li style="width:40px;height:40px;line-height:40px" class="new" data-calendar-day="">8</li><li style="width:40px;height:40px;line-height:40px" class="new" data-calendar-day="">9</li></ol></li></ul></div></div><div class="view view-month" style="width: 280px;"><div class="calendar-hd"><a href="javascript:;" data-calendar-display-month="" class="calendar-display">2018</a><div class="calendar-arrow"><span class="prev" title="上一年" data-calendar-arrow-month="">&lt;</span><span class="next" title="下一年" data-calendar-arrow-month="">&gt;</span></div></div><ol class="calendar-ct month-items" style="width: 280px; height: 280px;"><li style="width:70px;height:70px;line-height:70px" data-calendar-month="">1月</li><li style="width:70px;height:70px;line-height:70px" data-calendar-month="">2月</li><li style="width:70px;height:70px;line-height:70px" data-calendar-month="">3月</li><li style="width:70px;height:70px;line-height:70px" data-calendar-month="" class="now">4月</li><li style="width:70px;height:70px;line-height:70px" data-calendar-month="">5月</li><li style="width:70px;height:70px;line-height:70px" data-calendar-month="">6月</li><li style="width:70px;height:70px;line-height:70px" data-calendar-month="">7月</li><li style="width:70px;height:70px;line-height:70px" data-calendar-month="">8月</li><li style="width:70px;height:70px;line-height:70px" data-calendar-month="">9月</li><li style="width:70px;height:70px;line-height:70px" data-calendar-month="">10月</li><li style="width:70px;height:70px;line-height:70px" data-calendar-month="">11月</li><li style="width:70px;height:70px;line-height:70px" data-calendar-month="">12月</li></ol></div></div></div><div class="calendar-label"><p>HelloWorld</p><i></i></div></i><span>*</span>
                     </td>
                 </tr>
                 <tr>
                     <td>证件号码</td>
                     <td class="feikong">
-                        <input type="text" name="idcard" value="123123123213">
+                        <input type="text" name="idcard" value="${user.idcard}">
                         <div style="color: red; position: absolute;top:7px;left: 10px;">*内容不能为空*</div>
                     <span>*</span>
                     </td>
@@ -166,20 +167,20 @@
                 <tr>
                     <td>国别或地区</td>
                     <td class="feikong">
-                        <input type="text" name="country" value="中国">
+                        <input type="text" name="country" value="${user.country}">
                         <div style="color: red; position: absolute;top:7px;left: 10px;">*内容不能为空*</div>
                    <span>*</span>
                     </td>
                 </tr>
                 <tr>
                     <td>所在院系所</td>
-                    <td><input type="text" name="depart" value="农作"></td>
+                    <td><input type="text" name="depart" value="${user.depart}"></td>
                 </tr>
                 <tr>
                     <td>行政职务</td>
                     <td>
                         <select name="post">
-                            <option value="1" selected="selected">院长</option>
+                            <option value="1" selected="selected">${user.post}</option>
                             <option value="2">副院长</option>
                             <option value="3">Opel</option>
                             <option value="4">Audi</option>
@@ -188,7 +189,7 @@
                 </tr>
                 <tr>
                     <td>城市</td>
-                    <td><input type="text" name="city" value="太原"></td>
+                    <td><input type="text" name="city" value="${user.city}"></td>
                 </tr>
             </tbody></table>
         </div>
@@ -196,19 +197,28 @@
             <table>
                 <tbody><tr class="sex1">
                     <td>性别</td>
-                    
-                    
-	                    <td class="sex">
-	                        <input type="radio" value="0" name="sex">女
-	                        <input type="radio" value="1" name="sex" checked="checked">男
-	                    </td>
-                    
+
+
+                    <td class="sex">
+                        <c:if test="${user.sex==1}">
+                            <input type="radio" value="0" name="sex">女
+                            <input type="radio" value="1" name="sex" checked="checked">男
+                        </c:if>
+                        <c:if test="${user.sex==0}">
+                            <input type="radio" value="0" name="sex"checked="checked">女
+                            <input type="radio" value="1" name="sex" >男
+                        </c:if>
+                        <c:if test="${user.sex==null}">
+                            <input type="radio" value="0" name="sex" >女
+                            <input type="radio" value="1" name="sex" >男
+                        </c:if>
+                    </td>
                 </tr>
                 <tr>
                     <td>证件类型</td>
                     <td>
                         <select name="certificatetype">
-                            <option value="1" selected="selected">身份证</option>
+                            <option value="1" selected="selected">身份证 改不了</option>
                             <option value="2">护照</option>
                             <option value="3">Opel</option>
                             <option value="4">Audi</option>
@@ -219,20 +229,20 @@
                 <tr>
                     <td>民族</td>
                     <td class="feikong">
-                        <input type="text" name="nation" value="汉">
+                        <input type="text" name="nation" value="${user.nation}">
                         <div style="color: red; position: absolute;top:7px;left: 10px;">*内容不能为空*</div>
                     <span>*</span>
                     </td>
                 </tr>
                 <tr>
                     <td>所在单位</td>
-                    <td><input type="text" name="company" value="公司"> <span>*</span></td>
+                    <td><input type="text" name="company" value="${user.company}"> <span>*</span></td>
                 </tr>
                 <tr>
                     <td>职称</td>
                     <td>
                         <select name="jobtitle">
-                            <option value="1" selected="selected">教授</option>
+                            <option value="1" selected="selected">教授  改不了</option>
                             <option value="2">副教授</option>
                             <option value="3">Opel</option>
                             <option value="4">Audi</option>
@@ -242,14 +252,14 @@
                 </tr>
                 <tr>
                     <td>省、自治区、直辖市</td>
-                    <td><input type="text" name="province" value="山西啊啊"></td>
+                    <td><input type="text" name="province" value="${user.province}"></td>
                 </tr>
             </tbody></table>
         </div>
         <div class=" feikong txdz">
-           通讯地址 
-            
-            <input type="text" name="address" value="迎泽区"> <span>*</span>
+           通讯地址
+
+            <input type="text" name="address" value="${user.address}"> <span>*</span>
             <div style="color: red; position: absolute;top:7px;left: 90px;">*内容不能为空*</div>
 
         </div>
@@ -257,13 +267,13 @@
             <table>
                 <tbody><tr>
                     <td>邮政编码</td>
-                    <td><input type="text" name="zipcode" value="102500"></td>
+                    <td><input type="text" name="zipcode" value="${user.zipcode}"></td>
                 </tr>
                 <tr>
                     <td class="feikong">最高学位</td>
                     <td>
                         <select name="educational">
-                            <option value="1" selected="selected">博士</option>
+                            <option value="1" selected="selected">${user.educational}</option>
                             <option value="2">硕士</option>
                             <option value="3">Opel</option>
                             <option value="4">Audi</option>
@@ -274,19 +284,19 @@
                 <tr>
                     <td>授予年份</td>
                     <td class="feikong">
-                        <input type="text" name="grantyear" value="2017">
+                        <input type="text" name="grantyear" value="${user.grantyear}">
                         <div style="color: red; position: absolute;top:7px;left: 10px;">*内容不能为空*</div>
                     <span>*</span>
                     </td>
                 </tr>
                 <tr>
                     <td>院士</td>
-                    <td><input type="text" name="academician" value="张三"></td>
+                    <td><input type="text" name="academician" value="${user.academician}"></td>
                 </tr>
                 <tr>
                     <td>电子邮箱</td>
                     <td class="feikong">
-                        <input type="text" name="email" value="6545@qq.com">
+                        <input type="text" name="email" value="${user.email}">
                         <div style="color: red; position: absolute;top:7px;left: 10px;">*内容不能为空*</div>
                    <span>*</span>
                     </td>
@@ -294,18 +304,18 @@
                 <tr>
                     <td>手机号码</td>
                     <td class="feikong">
-                        <input type="text" name="phone" value="15735800000">
+                        <input type="text" name="phone" value="${user.phone}">
                         <div style="color: red; position: absolute;top:7px;left: 10px;">*内容不能为空*</div>
                    <span>*</span>
                     </td>
                 </tr>
                 <tr>
                     <td>家庭电话</td>
-                    <td><input type="text" name="homephone" value="1231231231"></td>
+                    <td><input type="text" name="homephone" value="${user.homephone}"></td>
                 </tr>
                 <tr>
                     <td>个人网页</td>
-                    <td><input type="text" name="personalweb" value="www.qweq.com"></td>
+                    <td><input type="text" name="personalweb" value="${user.personalweb}"></td>
                 </tr>
             </tbody></table>
         </div>
@@ -313,55 +323,59 @@
             <table>
                 <tbody><tr>
                     <td>毕业学校</td>
-                    <td><input type="text" name="graduatedschool" value="清华大学"></td>
+                    <td><input type="text" name="graduatedschool" value="${user.graduatedschool}"></td>
                 </tr>
                 <tr>
                     <td>授予国别及地区</td>
                     <td class="feikong">
-                        <input type="text" name="grantarea" value="中国">
+                        <input type="text" name="grantarea" value="${user.grantarea}">
                         <div style="color: red; position: absolute;top:7px;left: 10px;">*内容不能为空*</div>
                     <span>*</span>
                     </td>
                 </tr>
                 <tr>
                     <td>授予学校</td>
-                    <td><input type="text" name="grantschool" value="北大"></td>
+                    <td><input type="text" name="grantschool" value="${user.grantschool}"></td>
                 </tr>
                 <tr>
                     <td>导师名称</td>
-                    <td><input type="text" name="tutor" value="李四"></td>
+                    <td><input type="text" name="tutor" value="${user.tutor}"></td>
                 </tr>
                 <tr>
                     <td>备用电子邮箱</td>
-                    <td><input type="text" name="spareemail" value="asdad@163.com"></td>
+                    <td><input type="text" name="spareemail" value="${user.spareemail}"></td>
                 </tr>
                 <tr>
                     <td>办公电话</td>
                     <td class="feikong">
-                        <input type="text" name="officephone" value="12312312312">
+                        <input type="text" name="officephone" value="${user.officephone}">
                         <div style="color: red; position: absolute;top:7px;left: 10px;">*内容不能为空*</div>
                     <span>*</span>
                     </td>
                 </tr>
                 <tr>
                     <td>传真</td>
-                    <td><input type="text" name="fax" value="3212312312"></td>
+                    <td><input type="text" name="fax" value="${user.fax}"></td>
                 </tr>
             </tbody></table>
         </div>
         <div class="pzh">
-            在项目批准号 <input type="text" name="approvalnumber1" value="123123"><input type="text" name="approvalnumber2" value="123123"><input type="text" name="approvalnumber3" value="123">
+            在项目批准号 <input type="text" name="approvalnumber1" value="${user.approvalnumber1}"><input type="text" name="approvalnumber2" value="${user.approvalnumber2}"><input type="text" name="approvalnumber3" value="${user.approvalnumber3}">
         </div>
         <div style="margin-bottom: 50px;">
-            <button>保存</button>
+            <button onclick="sub1()">保存</button>
             <button onclick="history.go(-1)">返回</button>
         </div>
     </form>
 </div>
 
-
+</body>
 
 <script>
+    function sub1()
+    {
+        $("form").submit()
+    }
     $(function () {
 
         $('.feikong > input').blur(function () {

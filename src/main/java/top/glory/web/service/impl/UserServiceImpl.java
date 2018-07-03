@@ -36,5 +36,45 @@ public class UserServiceImpl implements UserService {
         return userMapper.selectupdate(user);
     }
 
+    @Override
+    public List<User> showAllData(User user) {
+        return userMapper.showAllData(user);
+    }
+
+    @Override
+    public User showUserById(Integer id) {
+        return userMapper.showUserById(id);
+    }
+
+    @Override
+    public int deleteById(Integer id) {
+        return userMapper.deleteById(id);
+    }
+
+    @Override
+    public int updateUser(User user) {
+        return userMapper.updateUser(user);
+    }
+
+    @Override
+    public int updateAllUser(User user) {
+        return userMapper.updateAllUser(user);
+    }
+
+    @Override
+    public int updatePasswordById(User user) {
+        return userMapper.updatePasswordById(user);
+    }
+
+    @Override
+    public List<User> selectAllUser(User user) {
+        return userMapper.selectAllUser(user);
+    }
+
+    @Override
+    public int updatecheckStatus(User user) {
+        return userMapper.updatecheckStatus(user);
+    }
+
 
 }

@@ -91,6 +91,7 @@ function checkrole(){
  * @returns {Boolean}
  */
 function sub(){
+	alert("Sdffsd")
 	$("input").trigger("blur");
 	$("select").trigger("blur");
 	/*alert(ok1+""+ok2+""+ok3+""+ok4+""+ok5+""+ok6+""+ok7+""+ok8+""+ok9+""+ok10+""+ok11+""+ok12);*/
@@ -137,7 +138,7 @@ function sub(){
 		$("#form1").submit();
 		return true;
 	}
-	
+
 	return false;
 	
 }

@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+    String path=request.getContextPath();
+    String basePath=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -36,52 +40,53 @@
 
 <div class="cus-content">
   <p class="cus-admin"><span>当前页面 : </span><a>客户管理/</a><a href="selectAll">客户审核</a></p>
-  <form action="updateCustomer" method="get" id="formCustomer">
+  <form action="<%=basePath%>rest/user/updatecheckStatus" method="get" id="formCustomer">
     <div class="cus-examine-infolist">
       <p class="cus-examine-title">审核</p>
       <ul class="examine-list">
         <li class="list-item">
           <label>审核方向</label>
-          <select id="application_direction" name="application_direction">
+            <input type="hidden" value="${user.id}" name="id"/>
+          <select id="application_direction" name="checkStatus">
 
-              <option >1</option>
-              <option >2</option>
-              <option>3</option>
+              <option value="0">未审核</option>
+              <option value="1">通过</option>
+              <option value="2">驳回</option>
 
           </select>
         </li>
         <li class="list-item">
           <label>真实姓名</label>
-          <input type="text" value="姓名" name="username" readonly/>
-          <input type="hidden" value="${user.id}" name="id"/>
+          <input type="text" value="${user.username}" name="username" readonly/>
+
         </li>
         <li class="list-item">
           <label>身份证号码</label>
-          <input type="text" value="11111111111" name="idcard" readonly/>
+          <input type="text" value="${user.idcard}" name="idcard" readonly/>
 
         </li>
         <li class="list-item">
           <label>客户单位</label>
-          <input type="text" value="111111" name="company" readonly/>
+          <input type="text" value="${user.company}" name="company" readonly/>
 
         </li>
         <li class="list-item">
           <label>单位地址</label>
-          <input type="text" value="2222222" name="address" readonly/>
+          <input type="text" value="${user.address}" name="address" readonly/>
         </li>
         <li class="list-item">
           <label>邮箱号码</label>
-          <input type="text" value="33333333" name="email" readonly/>
+          <input type="text" value="${user.email}" name="email" readonly/>
         </li>
         <li class="list-item">
           <label>手机号码</label>
-          <input type="text" value="4444444444" name="phone" readonly/>
+          <input type="text" value="${user.phone}" name="phone" readonly/>
         </li>
         <li class="list-item">
           <label>客户权限</label>
 
 
-          <select name="customer_power" onblur="checkrole()" id="roleSelect">
+          <select name="customerPower" onblur="checkrole()" id="roleSelect">
 		    				<option value="">请选择</option>
 		    				<option value="1">查看水果类</option>
 		    				<option value="2">查看谷物类</option>
@@ -94,22 +99,22 @@
           <span id="role_exam"></span> </li>
         <li class="list-item">
           <label>客户状态</label>
-          <input type="radio" name="state" value="1" checked="checked" />
+          <input type="radio" name="state" value="1" />
           启用
           <input type="radio" name="state" value="0" />
           禁用 </li>
         <li>
           <lable>开始时间</lable>
-          <input onblur="checkharvest_time()" type="text" name="starttime" value=""  id="dt" placeholder="选择日期" readonly >
+          <input onblur="checkharvest_time()" type="text" name="mystarttime" value=""  id="dt" placeholder="选择日期" readonly >
           <div id="dd"></div>
           <span id="harvest_time" ></span> </li>
         <li>
           <lable>结束时间</lable>
-          <input onblur="checksampling_time()" type="text" name="endtime" value="" id="dt-b" placeholder="选择日期" readonly>
+          <input onblur="checksampling_time()" type="text" name="myendtime" value="" id="dt-b" placeholder="选择日期" readonly>
           <div id="dd-b"></div>
           <span id="sampling_time" class="err"></span> </li>
       </ul>
-      <div class="examine-option"> <a class="examine-pass" ">通过</a><a class="examine-reject" href="javascript:void(0)"">驳回</a><a class="examine-back" href="javascript:void(0)" onclick="window.history.go(-1)">返回</a> </div>
+      <div class="examine-option"> <a class="examine-pass" onclick="pass()">通过</a><a class="examine-reject" href="javascript:void(0)" onclick="reject()">驳回</a><a class="examine-back" href="javascript:void(0)" onclick="window.history.go(-1)">返回</a> </div>
     </div>
   </form>
 </div>
@@ -278,4 +283,79 @@
 			    });
 		})
 	</script>
+<script>
+    window.onload=start()
+    function start()
+    {
+        if(${not empty user.checkStatus})
+        {
+            if(${user.checkStatus==0})
+            {
+                $('#application_direction option:eq(0)').prop("selected",true);
+            }
+            if(${user.checkStatus==1})
+            {
+                $('#application_direction option:eq(1)').prop("selected",true);
+            }
+            if(${user.checkStatus==2})
+            {
+                $('#application_direction option:eq(2)').prop("selected",true);
+            }
+        }
+        if(${not empty user.state})
+        {
+            if(${user.state==1})
+            {
+                $("input[name='state']").eq(0).prop("checked",true)
+            }
+            if(${user.state==0})
+            {
+                $("input[name='state']").eq(1).prop("checked",true)
+            }
+        }
+        if(${not empty user.customerPower})
+        {
+            if(${user.customerPower==1})
+            {
+                $("#roleSelect option:eq(1)").prop("selected",true);
+            }
+            if(${user.customerPower==2})
+            {
+                $("#roleSelect option:eq(2)").prop("selected",true);
+            }
+            if(${user.customerPower==3})
+            {
+                $("#roleSelect option:eq(3)").prop("selected",true);
+            }
+            if(${user.customerPower==4})
+            {
+                $("#roleSelect option:eq(4)").prop("selected",true);
+            }
+            if(${user.customerPower==5})
+            {
+                $("#roleSelect option:eq(5)").prop("selected",true);
+            }
+            if(${user.customerPower==6})
+            {
+                $("#roleSelect option:eq(6)").prop("selected",true);
+            }
+            if(${user.customerPower==7})
+            {
+                $("#roleSelect option:eq(7)").prop("selected",true);
+            }
+            else {
+                $("#roleSelect option:eq(0)").prop("selected",true);
+            }
+        }
+    }
+    function pass()
+    {
+        $('#application_direction option:eq(1)').prop("selected",true);
+        $("form").submit();
+    }
+    function reject() {
+        $('#application_direction option:eq(2)').prop("selected",true);
+        $("form").submit();
+    }
+</script>
 </html>

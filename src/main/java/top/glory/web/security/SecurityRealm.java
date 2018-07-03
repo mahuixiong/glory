@@ -31,7 +31,9 @@ public class SecurityRealm extends AuthorizingRealm {
     private UserService userService;
     @Resource
     private RolesService rolesService;
-
+    /*
+     * 权限
+     */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
         Object principal = principals.getPrimaryPrincipal();  //获取到登录的用户信息 只是获取账号
@@ -57,6 +59,10 @@ public class SecurityRealm extends AuthorizingRealm {
                 {
                     roles.add(RoleSign.MESSAGEROLE);
                 }
+                if (RoleSign.CUSTOMER.equals(rs.getRole()))//客户
+                {
+                    roles.add(RoleSign.CUSTOMER);
+                }
                 if (RoleSign.SUPERADMIN.equals(rs.getRole()))//超级用户
                 {
                     roles.add(RoleSign.CUSTOMER);//客户界面
@@ -73,7 +79,9 @@ public class SecurityRealm extends AuthorizingRealm {
         SimpleAuthorizationInfo authenticationInfo = new SimpleAuthorizationInfo(roles);//创建SimpleAuthorizationInfo，设置reles属性 设置的是界面上的shiro中的name值
         return authenticationInfo;
     }
-
+    /*
+     * 登录
+     */
     @Override//这里的token是从UserController中的login中传过来的  下面获取和位置有关
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
         String loginName = String.valueOf(token.getPrincipal());//获取到名字 前面传过来的 getPrincipal获取第一个参数

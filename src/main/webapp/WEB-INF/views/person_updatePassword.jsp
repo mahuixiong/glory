@@ -20,12 +20,12 @@
     	<!-- <span>当前页面 ：个人中心/</span><a>密码修改</a> -->
     </p>
     <article class="update_box box">
-	    
+		<input type="hidden" value="${userInfo.id}">
 	    	 <ul>
 	    		<li class="upBt" style="color:black">密码修改</li>
-	    		<li><span>原始密码</span><input class="oldpw" type="password" name="pwd" maxlength="15"></li>
-	    		<li><span>新密码</span><input class="newpw" type="password" name="newpwd" maxlength="15"></a></li>
-	    		<li><span>确认新密码</span><input class="oknewpw" type="password" name="newpwd1" maxlength="15"></li>
+	    		<li><span>原始密码</span><input class="oldpw" type="password" name="pwd" maxlength="15"><span id="pwd"></span></li>
+	    		<li><span>新密码</span><input class="newpw" type="password" name="newpwd" maxlength="15"><span id="newpwd"></span></li>
+	    		<li><span>确认新密码</span><input class="oknewpw" type="password" name="newpwd1" maxlength="15"><span id="newpwd1"></span></li>
 	    		<li class="upBt"><input class="submit" type="button" value="保存" onclick="sub()"></li>
 	    	</ul> 
 	   	<!-- </form> -->
@@ -42,7 +42,22 @@
 		}else if(a.length<6){
 			$("#pwd").html("长度最少6位").css("color","red");ok1=false;
 		}else{
-			ok1=true;
+		    $.ajax({
+				url:"http://localhost:8080/rest/user/updatePasswordById",
+				type:"post",
+				data:{"id":${userInfo.id},"pwd":a},
+				success:function(res)
+				{
+				    if(res==1)
+					{
+                        $("#pwd").html("原密码正确").css("color","blue");ok1=true;
+                    }
+                    else
+					{
+                        $("#pwd").html("原密码错误").css("color","red");ok1=false;
+                    }
+                }
+			})
 		}
 	});
 	$("input[name=newpwd]").blur(function(){
@@ -56,9 +71,11 @@
 			if($("input[name=newpwd]").val()!=$("input[name=newpwd1]").val()){
 				$("#newpwd1").html("两次密码不一致").css("color","red");ok2=false;
 			}else{
+                $("#newpwd").html("√").css("color","blue");
 				ok2=true;
 			}
 		}else{
+            $("#newpwd").html("√").css("color","blue");
 			ok2=true;
 		}
 	});
@@ -73,6 +90,7 @@
 			if($("input[name=newpwd]").val()!=$("input[name=newpwd1]").val()){
 				$("#newpwd1").html("两次密码不一致").css("color","red");ok3=false;
 			}else{
+                $("#newpwd1").html("√").css("color","blue");
 				ok3=true;
 			}
 		}else{
@@ -81,21 +99,39 @@
 	});
 	function sub(){
 		$("input").trigger("blur");
+        var pwd=$("input[name=pwd]").val();
+        var newpwd=$("input[name=newpwd]").val();
 		if(ok1==true&&ok2==true&&ok3==true){
-			$.ajax({
-				url:"/glory/rest/UpdatePwd",
-				data:"pwd="+$("input[name=pwd]").val()+"&newpwd="+$("input[name=newpwd1]").val(),
-				cache:false,
-				success:function(res){
-					if(res=='1'){
-						alert("修改成功,请重新登录！");
-						//self.location=document.referrer;
-						top.location.href="/glory/rest/user/logout";
-					}else if(res=='0'){
-						alert("修改失败，原密码可能有误");
-					}
-				}
-			}); 
+		    $.ajax({
+                url:"http://localhost:8080/rest/user/updatePasswordById",
+                type:"post",
+                data:{"id":${userInfo.id},"newpwd":newpwd},
+                success:function(res) {
+                	if(res==2)
+					{
+					    alert("修改成功")
+                        top.location.href="/rest/user/logout";
+                    }
+                    else
+					{
+					    alert("修改失败")
+                    }
+                }
+			})
+//			$.ajax({
+//				url:"/glory/rest/UpdatePwd",
+//				data:"pwd="+$("input[name=pwd]").val()+"&newpwd="+$("input[name=newpwd1]").val(),
+//				cache:false,
+//				success:function(res){
+//					if(res=='1'){
+//						alert("修改成功,请重新登录！");
+//						//self.location=document.referrer;
+//						top.location.href="/glory/rest/user/logout";
+//					}else if(res=='0'){
+//						alert("修改失败，原密码可能有误");
+//					}
+//				}
+//			});
 		} 
 	}
 	

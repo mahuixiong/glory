@@ -39,11 +39,12 @@ public class CategorylistServiceImpl implements CategorylistService{
 	 */
 	@Override
 	public PageInfo<Cropcategory> catetoryList(Integer page,Integer pagesize) {
-		page=page==null?1:page;
-		PageHelper.startPage(page,pagesize);
+		page=page==null?1:page;//页数
+		PageHelper.startPage(page,pagesize);//设置每页的页数 与现实的条数
 		CropcategoryExample example=new CropcategoryExample();
 		List<Cropcategory> list=this.cropcategoryMapper.selectByExample(example);
-		PageInfo pageinfo=new PageInfo<>(list,pagesize);
+		PageInfo pageinfo=new PageInfo<>(list,pagesize);//
+
 		return pageinfo;
 	}
 	/*

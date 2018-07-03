@@ -226,6 +226,7 @@
 			</div>
 			<div class="btn">
 				<a href="javascript:void(0)" class="back" onclick="history.go(-1)">上一页</a>
+				<a href="/rest/page/personDataBrowsing" class="back" >搜索</a>
 				<input class="search" value="搜索" type="button">
 			</div>
 		</form>

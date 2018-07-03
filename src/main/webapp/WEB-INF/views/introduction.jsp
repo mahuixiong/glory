@@ -21,7 +21,7 @@
 			<ul class="column_list">
 				<li class="column_1"><img src="../../app/img/col_list_1.jpg" alt="">
 				<span class="c1">谷物类</span>
-				<a href="person_first2.html">
+				<a href="/rest/page/personfirst2">
 				<div class="text">
     			<div class="imgtext" style="display: none;"> 
     			<span>谷物类包含：玉米，小麦，稻谷等多种类别</span>
@@ -31,7 +31,7 @@
   				</li>
   				<li class="column_2" onclick="shousuo(2)"><img src="../../app/img/col_list_2.jpg" alt="">
 				<span class="c1">油料类</span>
-				<a href="person_first2.html">
+				<a href="/rest/page/personfirst2">
 				<div class="text">
     			<div class="imgtext" style="display: none;"> 
     			<span style="top:56%">油料类包含：玉米油等</span>
@@ -41,7 +41,7 @@
   				</li>
   				<li class="column_3" onclick="shousuo(3)"><img src="../../app/img/col_list_3.jpg" alt="">
 				<span class="c1">水果类</span>
-				<a href="person_first2.html">
+				<a href="/rest/page/personfirst2">
 				<div class="text">
     			<div class="imgtext" style="display: none;"> 
     			<span>水果类包含：苹果，梨，葡萄等多种类别</span>

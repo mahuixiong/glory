@@ -1,6 +1,7 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
 		<meta charset="utf-8" />
@@ -28,9 +29,9 @@
 		<div class="user-content">
 			<p class="user-admin"><!-- <span>当前页面 : <span><a class="active">用户管理</a> --></p>
 			<div class="user-search">
-				<input placeholder="用户名" type="text" id = "user_name" value="" maxlength="10" onkeyup="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')" onpaste="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')" oncontextmenu = "value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')">
+				<input placeholder="用户名" type="text" id = "user_name" value="${username}" maxlength="10" onkeyup="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')" onpaste="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')" oncontextmenu = "value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')">
 				<a onclick="searchuser()" class="search_"></a>
-				<a class="user-add" href="user-management-add1.html">新增用户</a>
+				<a class="user-add" href="/rest/page/usermanagementadd1">新增用户</a>
 			</div>
 			<table class = "user-info">
 				<tr class="info-first info-item">
@@ -44,127 +45,103 @@
 					<td>状态</td>
 					<td>操作</td>
 				</tr>
-				<tr class="info-item">
-					<td>1</td>
-					<td>zzf</td>
-					<td>123456</td>
-					<td>admin</td>
-					<td>系统管理员</td>
-					<td>2017-11-15</td>
-					<td>ada</td>
-					<td>启用</td>
-					<td><a href="user-management-modify.html" class="edit">编辑</a><a href="javascript:if(confirm('确实要删除吗?'))location=''"class="delete">删除</a></td>
-				</tr>
-				<tr class="info-item">
-					<td>2</td>
-					<td>zzfff</td>
-					<td>123456</td>
-					<td>小红</td>
-					<td>信息管理员</td>
-					<td>2017-11-15</td>
-					<td>admin</td>
-					<td>启用</td>
-					<td><a href="user-management-modify.html" class="edit">编辑</a><a href="javascript:if(confirm('确实要删除吗?'))location=''" class="delete">删除</a></td>
-				</tr>
-				<tr class="info-item">
-					<td>3</td>
-					<td>ffgs</td>
-					<td>123456</td>
-					<td>小刚</td>
-					<td>客户管理员</td>
-					<td>2017-11-15</td>
-					<td>admin</td>
-					<td>启用</td>
-					<td><a href="user-management-modify.html" class="edit">编辑</a><a href="javascript:if(confirm('确实要删除吗?'))location=''" class="delete">删除</a></td>
-				</tr>
-				<tr class="info-item">
-					<td>4</td>
-					<td>zzkffff</td>
-					<td>123456</td>
-					<td>小名</td>
-					<td>信息管理员</td>
-					<td>2017-11-15</td>
-					<td>admin</td>
-					<td>启用</td>
-					<td><a href="user-management-modify.html" class="edit">编辑</a><a href="javascript:if(confirm('确实要删除吗?'))location=''" class="delete">删除</a></td>
-				</tr>
-				<tr class="info-item">
-					<td>5</td>
-					<td>zzfddff</td>
-					<td>123456</td>
-					<td>小龙</td>
-					<td>信息管理员</td>
-					<td>2017-11-15</td>
-					<td>admin</td>
-					<td>启用</td>
-					<td><a href="user-management-modify.html" class="edit">编辑</a><a href="javascript:if(confirm('确实要删除吗?'))location=''" class="delete">删除</a></td>
-				</tr>
-				<tr class="info-item">
-					<td>6</td>
-					<td>zddzfff</td>
-					<td>123456</td>
-					<td>小绿</td>
-					<td>信息管理员</td>
-					<td>2017-11-15</td>
-					<td>admin</td>
-					<td>启用</td>
-					<td><a href="user-management-modify.html" class="edit">编辑</a><a href="javascript:if(confirm('确实要删除吗?'))location=''" class="delete">删除</a></td>
-				</tr>
-				<tr class="info-item">
-					<td>7</td>
-					<td>zzfff</td>
-					<td>123456</td>
-					<td>小天</td>
-					<td>信息管理员</td>
-					<td>2017-11-15</td>
-					<td>admin</td>
-					<td>启用</td>
-					<td><a href="user-management-modify.html" class="edit">编辑</a><a href="javascript:if(confirm('确实要删除吗?'))location=''" class="delete">删除</a></td>
-				</tr>
-				<tr class="info-item">
-					<td>8</td>
-					<td>zzfff</td>
-					<td>123456</td>
-					<td>小驴</td>
-					<td>信息管理员</td>
-					<td>2017-11-15</td>
-					<td>admin</td>
-					<td>启用</td>
-					<td><a href="user-management-modify.html" class="edit">编辑</a><a href="javascript:if(confirm('确实要删除吗?'))location=''" class="delete">删除</a></td>
-				</tr>
+				<c:forEach items="${userlist.page.list}" var="list">	<%--<c:forEach items="${userlist.list}" var="list">--%>
+					<tr class="info-item">
+						<td>${list.id}</td>
+						<td>${list.loginName}</td>
+						<td>${list.password}</td>
+						<td>${list.username}</td>
+						<td>
+						<c:forEach items="${userlist.role}" var="role">
+							<c:if test="${list.role==role.rid}">
+								${role.chrole}
+							</c:if>
+						</c:forEach>
+							<%--<c:if test="${list.role==1}">系统管理员</c:if>--%>
+							<%--<c:if test="${list.role==2}">信息管理员</c:if>--%>
+							<%--<c:if test="${list.role==3}">客户管理员</c:if>--%>
+							<%--<c:if test="${list.role==4}">信息权限管理员</c:if>--%>
+							<%--<c:if test="${list.role==5}">客户</c:if>--%>
+							<%--<c:if test="${list.role==6}">超级用户</c:if>--%>
+							<%--<c:if test="${empty list.role}">客户</c:if>--%>
+						</td>
+						<td><fmt:formatDate value="${list.createTime}" pattern="yyyy-MM-dd"/> </td>
+						<td>${list.createpeople}</td>
+						<td>
+							<c:if test="${list.state==1}">启用</c:if>
+							<c:if test="${list.state==0}">禁用</c:if>
+							<c:if test="${list.state!=1&&list.state!=0}">未设置</c:if>
+						</td>
+						<%--/rest/page/usermanagementmodify--%>
+						<td><a href="showUserById?id=${list.id}" class="edit">编辑</a><a href="javascript:if(confirm('确实要删除吗?'))location='deleteById?id=${list.id}'"class="delete">删除</a></td>
+					</tr>
+				</c:forEach>
 			</table>
 			<div class="pageing-con">
 				<ul class="pageing-info">
-					<li class="pageing-item head"><a data-id="" href="" title="">首页</a></li>
-					<li class="pageing-item prev"><a data-id="" href="" title="">上一页</a></li>
-					<li class="pageing-item  disabled active">
-						<a data-id="1" href="javascript:void(0)" title="">1</a>
+					<li class="pageing-item head"><a data-id="" href="showAllData?pageNum=1&username=${username}" title="">首页</a></li>
+					<li class="pageing-item prev">
+						<c:if test="${userlist.page.hasPreviousPage}">
+						<a data-id="" href="showAllData?pageNum=${userlist.page.pageNum-1}&username=${username}" title="">上一页</a>
+						</c:if>
+						<c:if test="${userlist.page.hasPreviousPage==false}">
+							<a data-id="" href="javascript:void(0)" title="">上一页</a>
+						</c:if>
 					</li>
-					<li class="pageing-item  disabled" >
-						<a data-id="2" href="javascript:void(0)" title="">2</a>
+					<c:forEach items="${userlist.page.navigatepageNums}" var="page_num">
+						<c:if test="${page_num ==userlist.page.pageNum}">
+							<li class="pageing-item  disabled active">
+								<a data-id="1" href="javascript:void(0)" title="">${page_num}</a>
+							</li>
+						</c:if>
+						<c:if test="${page_num !=userlist.page.pageNum}">
+							<li class="pageing-item  disabled active">
+								<a data-id="1" href="showAllData?pageNum=${page_num}&username=${username}" title="">${page_num}</a>
+							</li>
+						</c:if>
+					</c:forEach>
+					<li class="pageing-item next">
+						<c:if test="${userlist.page.hasNextPage}">
+						<a data-id="" href="showAllData?pageNum=${userlist.page.pageNum+1}&username=${username}" title="">下一页</a>
+						</c:if>
+						<c:if test="${userlist.page.hasNextPage==false}">
+							<a data-id="" href="javascript:void(0)" title="">下一页</a>
+						</c:if>
 					</li>
-					<li class="pageing-item  disabled" >
-						<a data-id="3" href="javascript:void(0)" title="">3</a>
-					</li>
-					<li class="pageing-item  disabled" >
-						<a data-id="4" href="javascript:void(0)" title="">4</a>
-					</li>
-					<li class="pageing-item  disabled" >
-						<a data-id="5" href="javascript:void(0)" title="">5</a>
-					</li>
-					<li class="pageing-item  disabled" >
-						<a data-id="6" href="javascript:void(0)" title="">6</a>
-					</li>
-					<li class="pageing-item  disabled" >
-						<a data-id="7" href="javascript:void(0)" title="">7</a>
-					</li>
-					<li class="pageing-item  disabled" >
-						<a data-id="8" href="javascript:void(0)" title="">8</a>
-					</li>
-					<li class="pageing-item next"><a data-id="" href="" title="">下一页</a></li>
-					<li class="pageing-item foot"><a data-id="" href="" title="">尾页</a></li>
+					<li class="pageing-item foot"><a data-id="" href="showAllData?pageNum=${userlist.page.pages}&username=${username}" title="">尾页</a></li>
 				</ul>
 		    </div>
 		</div>
 	</body>
+	<script src="../../app/js/jquery-1.11.0.min.js"></script>
+	<script src="../../app/js/layui.all.js"></script>
+<script>
+	<%--if(${empty userlist.page.list})--%>
+	<%--{--%>
+        <%--var username=$("#user_name").val()--%>
+        <%--$.ajax({--%>
+            <%--url:"http://localhost:8080/rest/user/showAllData?username="+username,--%>
+            <%--type:"get",--%>
+            <%--success:function () {--%>
+                <%--location.href="http://localhost:8080/rest/user/showAllData?username="+username;--%>
+            <%--}--%>
+        <%--})--%>
+	<%--}--%>
+		function searchuser()
+		{
+		    var username=$("#user_name").val()
+			$.ajax({
+				url:"http://localhost:8080/rest/user/showAllData?username="+username,
+				type:"get",
+				success:function () {
+					location.href="http://localhost:8080/rest/user/showAllData?username="+username;
+                }
+			})
+		}
+	<%--window.onload=start()--%>
+	<%--function start(){--%>
+        <%--if(${empty userlist.page.list})--%>
+            <%--location.href="http://localhost:8080/rest/user/showAllData";--%>
+	<%--}--%>
+</script>
 </html>

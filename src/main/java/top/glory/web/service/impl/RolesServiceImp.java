@@ -15,4 +15,9 @@ public class RolesServiceImp implements RolesService {
     public List<Roles> selectRolesByUserId(Integer rid) {
         return rolesMapper.selectRolesByUserId(rid);
     }
+
+    @Override
+    public List<Roles> selectRoles() {
+        return rolesMapper.selectRoles();
+    }
 }

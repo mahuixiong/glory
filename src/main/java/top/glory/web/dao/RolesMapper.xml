@@ -5,6 +5,9 @@
   <select id="selectRolesByUserId" parameterType="Integer" resultType="Roles">
     select * from roles where rid=#{rid}
   </select>
+  <select id="selectRoles" parameterType="Integer" resultType="Roles">
+    select * from roles
+  </select>
   <resultMap id="BaseResultMap" type="top.glory.web.model.Roles" >
     <id column="rid" property="rid" jdbcType="INTEGER" />
     <result column="role" property="role" jdbcType="VARCHAR" />

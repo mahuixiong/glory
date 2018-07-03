@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%
+	String path=request.getContextPath();
+	String basePath=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -11,9 +15,10 @@
 	<link rel="stylesheet" type="text/css" href="../../app/css/p_downloadRecord.css" />
 	
 </head>
-<script type="text/javascript" src="../../app/js/jquery.js" ></script>
+<%--<script type="text/javascript" src="<%=basePath %>app/js/jquery1.11.3-jquery.min.js"></script>--%>
+<script type="text/javascript" src="<%=basePath %>/app/js/jquery.js" ></script>
 <script type="text/javascript" src="../../app/js/browsing1.js" ></script>
-	<script type="text/javascript" src="../../app/js/hover.js" ></script>
+<script type="text/javascript" src="../../app/js/hover.js" ></script>
 <body>
  <article class="z-box" data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-49" data-genuitec-path="/glory/src/main/webapp/WEB-INF/views/person_BrowsingHistory.jsp">
     <div class="top_url_box box clear">
@@ -35,7 +40,7 @@
     	<div class="articles_box">
     		<div class="seria_num">
     			<!-- <div class="sample_name">样品编号</div> -->
-    			<div class="sample_id">R-13-2322325</div>
+    			<div class="sample_id">R-13-2888888</div>
     		</div>
     		
     		<div class="seria_right">
@@ -62,18 +67,11 @@
 	    				<li><span></span><span class="sam_info_value">2013-09-29</span></li>
 	    			</ul>
 	    		</div>
-	    		
-	    		
-	    		
-	    		
-	    		
-	    		
-	    		
 	    		<div class="articles_box_nr caozuo sample_info4">
 	    			<ul>
-	    				<li class="downline">
+	    				<li class="downline" >
 	    				<!-- <a href="javascript:exportExcel();">下载</a> -->
-	    				<a href="">下载</a>
+	    				<a href="javascript:void(0)" onclick="sss(0)">下载</a>
 	    				</li>
 	    				<li class="showbox">展开 <div style="display: none">24</div><span id="showa"></span></li>
 	    				<li class="hidebox">收起 <span id="hidea"></span></li>	    			</ul>
@@ -86,7 +84,7 @@
     			<!-- <div class="sample_name">样品编号</div> -->
     			<div class="sample_id">R-13-2322323</div>
     		</div>
-    		
+
     		<div class="seria_right">
 	    		<div class="articles_box_nr addr sample_info1">
 	    			<ul>
@@ -111,129 +109,41 @@
 	    				<li><span></span><span class="sam_info_value">2013-09-29</span></li>
 	    			</ul>
 	    		</div>
-	    		
-	    		
-	    		
-	    		
-	    		
-	    		
-	    		
 	    		<div class="articles_box_nr caozuo sample_info4">
 	    			<ul>
-	    				<li class="downline">
+	    				<li class="downline" >
 	    				<!-- <a href="javascript:exportExcel();">下载</a> -->
-	    				<a href="">下载</a>
+	    				<a href="javascript:void(0)" onclick="sss(1)">下载</a>
 	    				</li>
 	    				<li class="showbox">展开 <div style="display: none">22</div><span id="showa"></span></li>
 	    				<li class="hidebox">收起 <span id="hidea"></span></li>	    			</ul>
 	    		</div>
 	    	</div>
     	</div>
-    	
-    	<div class="articles_box">
-    		<div class="seria_num">
-    			<!-- <div class="sample_name">样品编号</div> -->
-    			<div class="sample_id">R-13-2322322</div>
-    		</div>
-    		
-    		<div class="seria_right">
-	    		<div class="articles_box_nr addr sample_info1">
-	    			<ul>
-	    				<li><span class="sam_info_value">安徽六安寿县</span></li>
-	    				<li><span>取样人：</span><span class="sam_info_value">胡飞</span></li>
-	    				<li><span>气候特征：</span><span class="sam_info_value"></span></li>
-	    				<li><span>环境描述：</span><span class="sam_info_value"></span></li>
-	    			</ul>
-	    		</div>
-	    		<div class="articles_box_nr nzwclass sample_info1">
-	    			<ul>
-	    				<li><span></span><span class="sam_info_value">稻谷</span></li>
-	    			</ul>
-	    		</div>
-	    		<div class="articles_box_nr wrl sample_info1">
-	    			<ul>
-	    				<li><span></span><span class="sam_info_value">100.00%</span></li>
-	    			</ul>
-	    		</div>
-	    		<div class="articles_box_nr qydate sample_info1">
-	    			<ul>
-	    				<li><span></span><span class="sam_info_value">2013-09-29</span></li>
-	    			</ul>
-	    		</div>
-	    		
-	    		
-	    		
-	    		
-	    		
-	    		
-	    		
-	    		<div class="articles_box_nr caozuo sample_info4">
-	    			<ul>
-	    				<li class="downline">
-	    				<!-- <a href="javascript:exportExcel();">下载</a> -->
-	    				<a href="">下载</a>
-	    				</li>
-	    				<li class="showbox">展开 <div style="display: none">21</div><span id="showa"></span></li>
-	    				<li class="hidebox">收起 <span id="hidea"></span></li>	    			</ul>
-	    		</div>
-	    	</div>
-    	</div>
-    	
-    	<div class="articles_box">
-    		<div class="seria_num">
-    			<!-- <div class="sample_name">样品编号</div> -->
-    			<div class="sample_id">R-13-2322321</div>
-    		</div>
-    		
-    		<div class="seria_right">
-	    		<div class="articles_box_nr addr sample_info1">
-	    			<ul>
-	    				<li><span class="sam_info_value">安徽六安寿县</span></li>
-	    				<li><span>取样人：</span><span class="sam_info_value">胡飞</span></li>
-	    				<li><span>气候特征：</span><span class="sam_info_value"></span></li>
-	    				<li><span>环境描述：</span><span class="sam_info_value"></span></li>
-	    			</ul>
-	    		</div>
-	    		<div class="articles_box_nr nzwclass sample_info1">
-	    			<ul>
-	    				<li><span></span><span class="sam_info_value">稻谷</span></li>
-	    			</ul>
-	    		</div>
-	    		<div class="articles_box_nr wrl sample_info1">
-	    			<ul>
-	    				<li><span></span><span class="sam_info_value">100.00%</span></li>
-	    			</ul>
-	    		</div>
-	    		<div class="articles_box_nr qydate sample_info1">
-	    			<ul>
-	    				<li><span></span><span class="sam_info_value">2013-09-29</span></li>
-	    			</ul>
-	    		</div>
-	    		
-	    		
-	    		
-	    		
-	    		
-	    		
-	    		
-	    		<div class="articles_box_nr caozuo sample_info4">
-	    			<ul>
-	    				<li class="downline">
-	    				<!-- <a href="javascript:exportExcel();">下载</a> -->
-	    				<a href="">下载</a>
-	    				</li>
-	    				<li class="showbox">展开 <div style="display: none">20</div><span id="showa"></span></li>
-	    				<li class="hidebox">收起 <span id="hidea"></span></li>	    			</ul>
-	    		</div>
-	    	</div>
-    	</div>
-    		
     </article>
-   </article>
+ </article>
 </body>
-<script type="text/javascript">
-	function lookFun(){
-		alert(1);
+<script>
+	//查到的数据用ajax铺上
+	//每个的sss(要设置一个id)i就可以
+	//下载的data中要加入相应的属性
+
+	var i;
+	var o=0;
+    function sss(id)
+	{
+	    i=id+1
+        var a=$(".sample_id").eq(id).text()
+	    $.ajax({
+			url:"http://localhost:8080/rest/down/download",
+			type:"post",
+			data:{"bianma":a,"hang":i},
+			success:function (res) {
+				alert("下载成功")
+				o++
+            }
+		})
 	}
 </script>
+
 </html>

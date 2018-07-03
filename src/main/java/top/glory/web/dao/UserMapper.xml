@@ -3,51 +3,51 @@
 <mapper namespace="top.glory.web.dao.UserMapper">
     <!--登录 按照账号，密码显示-->
     <select id="authenticationUser" parameterType="User" resultType="User"><!--使用Valid注释 这里传数据必须用param定义的属性调用-->
-    select * from USER where login_name=#{user.loginName} and password=#{user.password}
-  </select>
-    <!--显示名字 按照账号获取信息-->
+        select * from USER where login_name=#{user.loginName} and password=#{user.password}
+    </select>
+    <!--显示名字 按照账号获取信息 注册js显示-->
     <select id="selectByLogin_name" parameterType="String" resultType="User">
-    select * from USER where login_name=#{loginName}
-  </select>
+        select * from USER where login_name=#{loginName}
+    </select>
     <!--注册-->
     <insert id="insert" parameterType="top.glory.web.model.User">
-    insert into user (id, login_name, username,
-    idcard, email, phone,
-    application_time, application_direction,
-    check_status, state, create_time,
-    isdel, customer_power, ispass,
-    password, role, createpeople,
-    category, area, starttime,
-    endtime, company, address,
-    msgflag, sex, birthday,
-    certificatetype, nation, country,
-    depart, jobtitle, post,
-    province, city, zipcode,
-    graduatedschool, educational, grantarea,
-    grantyear, grantschool, academician,
-    tutor, spareemail, officephone,
-    homephone, fax, personalweb,
-    approvalnumber1, approvalnumber2, approvalnumber3
-    )
-    values (#{id,jdbcType=INTEGER}, #{loginName,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR},
-    #{idcard,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR},
-    #{applicationTime,jdbcType=TIMESTAMP}, #{applicationDirection,jdbcType=INTEGER},
-    #{checkStatus,jdbcType=INTEGER}, #{state,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP},
-    #{isdel,jdbcType=INTEGER}, #{customerPower,jdbcType=VARCHAR}, #{ispass,jdbcType=INTEGER},
-    #{password,jdbcType=VARCHAR}, #{role,jdbcType=INTEGER}, #{createpeople,jdbcType=INTEGER},
-    #{category,jdbcType=VARCHAR}, #{area,jdbcType=VARCHAR}, #{starttime,jdbcType=TIMESTAMP},
-    #{endtime,jdbcType=TIMESTAMP}, #{company,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR},
-    #{msgflag,jdbcType=INTEGER}, #{sex,jdbcType=INTEGER}, #{birthday,jdbcType=TIMESTAMP},
-    #{certificatetype,jdbcType=INTEGER}, #{nation,jdbcType=VARCHAR}, #{country,jdbcType=VARCHAR},
-    #{depart,jdbcType=VARCHAR}, #{jobtitle,jdbcType=INTEGER}, #{post,jdbcType=INTEGER},
-    #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{zipcode,jdbcType=VARCHAR},
-    #{graduatedschool,jdbcType=VARCHAR}, #{educational,jdbcType=VARCHAR}, #{grantarea,jdbcType=VARCHAR},
-    #{grantyear,jdbcType=VARCHAR}, #{grantschool,jdbcType=VARCHAR}, #{academician,jdbcType=VARCHAR},
-    #{tutor,jdbcType=VARCHAR}, #{spareemail,jdbcType=VARCHAR}, #{officephone,jdbcType=VARCHAR},
-    #{homephone,jdbcType=VARCHAR}, #{fax,jdbcType=VARCHAR}, #{personalweb,jdbcType=VARCHAR},
-    #{approvalnumber1,jdbcType=VARCHAR}, #{approvalnumber2,jdbcType=VARCHAR}, #{approvalnumber3,jdbcType=VARCHAR}
-    )
-  </insert>
+        insert into user (id, login_name, username,
+        idcard, email, phone,
+        application_time, application_direction,
+        check_status, state, create_time,
+        isdel, customer_power, ispass,
+        password, role, createpeople,
+        category, area, starttime,
+        endtime, company, address,
+        msgflag, sex, birthday,
+        certificatetype, nation, country,
+        depart, jobtitle, post,
+        province, city, zipcode,
+        graduatedschool, educational, grantarea,
+        grantyear, grantschool, academician,
+        tutor, spareemail, officephone,
+        homephone, fax, personalweb,
+        approvalnumber1, approvalnumber2, approvalnumber3
+        )
+        values (#{id,jdbcType=INTEGER}, #{loginName,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR},
+        #{idcard,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR},
+        #{applicationTime,jdbcType=TIMESTAMP}, #{applicationDirection,jdbcType=INTEGER},
+        #{checkStatus,jdbcType=INTEGER}, #{state,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP},
+        #{isdel,jdbcType=INTEGER}, #{customerPower,jdbcType=VARCHAR}, #{ispass,jdbcType=INTEGER},
+        #{password,jdbcType=VARCHAR}, #{role,jdbcType=INTEGER}, #{createpeople,jdbcType=INTEGER},
+        #{category,jdbcType=VARCHAR}, #{area,jdbcType=VARCHAR}, #{starttime,jdbcType=TIMESTAMP},
+        #{endtime,jdbcType=TIMESTAMP}, #{company,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR},
+        #{msgflag,jdbcType=INTEGER}, #{sex,jdbcType=INTEGER}, #{birthday,jdbcType=TIMESTAMP},
+        #{certificatetype,jdbcType=INTEGER}, #{nation,jdbcType=VARCHAR}, #{country,jdbcType=VARCHAR},
+        #{depart,jdbcType=VARCHAR}, #{jobtitle,jdbcType=INTEGER}, #{post,jdbcType=INTEGER},
+        #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{zipcode,jdbcType=VARCHAR},
+        #{graduatedschool,jdbcType=VARCHAR}, #{educational,jdbcType=VARCHAR}, #{grantarea,jdbcType=VARCHAR},
+        #{grantyear,jdbcType=VARCHAR}, #{grantschool,jdbcType=VARCHAR}, #{academician,jdbcType=VARCHAR},
+        #{tutor,jdbcType=VARCHAR}, #{spareemail,jdbcType=VARCHAR}, #{officephone,jdbcType=VARCHAR},
+        #{homephone,jdbcType=VARCHAR}, #{fax,jdbcType=VARCHAR}, #{personalweb,jdbcType=VARCHAR},
+        #{approvalnumber1,jdbcType=VARCHAR}, #{approvalnumber2,jdbcType=VARCHAR}, #{approvalnumber3,jdbcType=VARCHAR}
+        )
+    </insert>
     <!--忘记密码-->
     <update id="updatepwd" parameterType="User">
        update user
@@ -59,7 +59,7 @@
       email = #{email,jdbcType=VARCHAR} and
       phone = #{phone,jdbcType=VARCHAR}
   </update>
-    <!--忘记密码-->
+    <!--忘记密码 js显示-->
     <select id="selectupdate" parameterType="User" resultType="User"><!--使用Valid注释 这里传数据必须用param定义的属性调用-->
         select * from USER
         <where>
@@ -81,6 +81,126 @@
             </if>
         </where>
     </select>
+    <!--分页显示  用户名模糊查询-->
+    <select id="showAllData" parameterType="User" resultType="User">
+        select * from USER
+        <where>
+            <if test="user.username!=null and user.username!=''">
+                username like '%${user.username}%'
+            </if>
+        </where>
+    </select>
+    <!--按id查询 修改界面显示-->
+    <select id="showUserById" parameterType="Integer" resultType="User">
+        select * from USER where id = #{id}
+    </select>
+    <!--删除-->
+    <delete id="deleteById" parameterType="Integer">
+        delete from USER where id=#{id}
+    </delete>
+    <!--编辑用户-->
+    <update id="updateUser" parameterType="User">
+      update user
+        set
+        login_name = #{loginName,jdbcType=VARCHAR},
+        username = #{username,jdbcType=VARCHAR},
+        state = #{state,jdbcType=INTEGER},
+        password = #{password,jdbcType=VARCHAR},
+        role = #{role,jdbcType=INTEGER}
+       where id = #{id,jdbcType=INTEGER}
+    </update>
+    <!--个人中心修改-->
+    <update id="updateAllUser" parameterType="User">
+          update user
+        set
+        login_name = #{record.loginName,jdbcType=VARCHAR},
+        username = #{record.username,jdbcType=VARCHAR},
+        birthday = #{record.birthday,jdbcType=TIMESTAMP},
+        idcard = #{record.idcard,jdbcType=VARCHAR},
+        country = #{record.country,jdbcType=VARCHAR},
+        depart = #{record.depart,jdbcType=VARCHAR},
+        post = #{record.post,jdbcType=INTEGER},
+        city = #{record.city,jdbcType=VARCHAR},
+        sex = #{record.sex,jdbcType=INTEGER},
+        nation = #{record.nation,jdbcType=VARCHAR},
+        company = #{record.company,jdbcType=VARCHAR},
+        province = #{record.province,jdbcType=VARCHAR},
+        address = #{record.address,jdbcType=VARCHAR},
+        zipcode = #{record.zipcode,jdbcType=VARCHAR},
+        educational = #{record.educational,jdbcType=VARCHAR},
+        grantyear = #{record.grantyear,jdbcType=VARCHAR},
+        academician = #{record.academician,jdbcType=VARCHAR},
+        email = #{record.email,jdbcType=VARCHAR},
+        phone = #{record.phone,jdbcType=VARCHAR},
+        homephone = #{record.homephone,jdbcType=VARCHAR},
+        personalweb = #{record.personalweb,jdbcType=VARCHAR},
+        graduatedschool = #{record.graduatedschool,jdbcType=VARCHAR},
+        grantarea = #{record.grantarea,jdbcType=VARCHAR},
+        grantschool = #{record.grantschool,jdbcType=VARCHAR},
+        tutor = #{record.tutor,jdbcType=VARCHAR},
+        spareemail = #{record.spareemail,jdbcType=VARCHAR},
+        officephone = #{record.officephone,jdbcType=VARCHAR},
+        fax = #{record.fax,jdbcType=VARCHAR},
+        jobtitle = #{record.jobtitle,jdbcType=INTEGER},
+        certificatetype = #{record.certificatetype,jdbcType=INTEGER},
+        approvalnumber1 = #{record.approvalnumber1,jdbcType=VARCHAR},
+        approvalnumber2 = #{record.approvalnumber2,jdbcType=VARCHAR},
+        approvalnumber3 = #{record.approvalnumber3,jdbcType=VARCHAR}
+        where  id = #{record.id,jdbcType=INTEGER}
+    </update>
+    <!--修改密码-->
+    <update id="updatePasswordById" parameterType="User">
+         update user
+        set
+        password = #{password,jdbcType=VARCHAR}
+       where id = #{id,jdbcType=INTEGER}
+    </update>
+    <!--客户审核 根据用户名，客户单位，单位地址，审核状态查询-->
+    <!--要根据注册时候那个分到两个界面显示 但是不知道是那个-->
+    <select id="selectAllUser" parameterType="User" resultType="User">
+        select * from USER
+        <where>
+            <if test="username!=null and username!=''">
+                username =#{username}
+            </if>
+            <if test="company!=null and company!=''">
+                and company=#{company}
+            </if>
+            <if test="address!=null and address!=''">
+                and address=#{address}
+            </if>
+            <if test="checkStatus!=null">
+                and check_status=#{checkStatus}
+            </if>
+        </where>
+    </select>
+    <!--修改审核状态-->
+    <update id="updatecheckStatus" parameterType="User">
+        update user
+        set
+         check_status = #{checkStatus,jdbcType=INTEGER}
+       where id = #{id,jdbcType=INTEGER}
+    </update>
+
+
+
+    <select id="selectByExample" resultMap="BaseResultMap" parameterType="top.glory.web.model.UserExample">
+        select
+        <if test="distinct">
+            distinct
+        </if>
+        'true' as QUERYID,
+        <include refid="Base_Column_List"/>
+        from user
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+        <if test="orderByClause != null">
+            order by ${orderByClause}
+        </if>
+    </select>
+
+
     <resultMap id="BaseResultMap" type="top.glory.web.model.User">
         <id column="id" property="id" jdbcType="INTEGER"/>
         <result column="login_name" property="loginName" jdbcType="VARCHAR"/>
@@ -202,21 +322,6 @@
     tutor, spareemail, officephone, homephone, fax, personalweb, approvalnumber1, approvalnumber2, 
     approvalnumber3
   </sql>
-    <select id="selectByExample" resultMap="BaseResultMap" parameterType="top.glory.web.model.UserExample">
-        select
-        <if test="distinct">
-            distinct
-        </if>
-        'true' as QUERYID,
-        <include refid="Base_Column_List"/>
-        from user
-        <if test="_parameter != null">
-            <include refid="Example_Where_Clause"/>
-        </if>
-        <if test="orderByClause != null">
-            order by ${orderByClause}
-        </if>
-    </select>
     <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
         select
         <include refid="Base_Column_List"/>

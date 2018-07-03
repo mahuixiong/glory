@@ -60,6 +60,10 @@ public class MuchRealm extends AuthorizingRealm {
                 {
                     roles.add("messagerole");
                 }
+                if("customer".equals(rs.getRole()))//客户
+                {
+                    roles.add("customer");
+                }
                 if("superadmin".equals(rs.getRole()))//超级用户
                 {
                     roles.add("customer");//客户界面
@@ -113,7 +117,7 @@ public class MuchRealm extends AuthorizingRealm {
     public static void main(String[] args) {
         String hashAlgorithmName="md5";
         Object credentials="123456";
-        Object salt=ByteSource.Util.bytes("admin123");
+        Object salt=ByteSource.Util.bytes("a123123");
         int hashIterations=1024;
         SimpleHash simpleHash=new SimpleHash(hashAlgorithmName,credentials,salt,hashIterations);
         System.out.println(simpleHash+"/////////////////////////////////////////////////..s");
