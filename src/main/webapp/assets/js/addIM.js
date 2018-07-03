@@ -1,3 +1,4 @@
+
 $(function(){
 	/*添加产毒菌株信息*/
 	var character = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
@@ -16,20 +17,21 @@ $(function(){
 			
 		};
 	});
-	/*添加毒素信息*/
+	/*添加毒素信息
 	$(".add-dsxx").click(function(){
 		$('.addds').append('<li class="edittable-middle"><div class="editmiddle-left">毒素信息</div><div class="editmiddle-right"><ul><li><lable>毒素种类</lable><select name="toxin_id" id="toxin_id1" onblur="checktoxin_id()"><option value="0" >请选择</option></select><span id="toxin_id" ></span></li><li><lable>毒素含量</lable><input name="toxin_count" type="text"  onblur="checktoxin_count()"  maxlength="10" placeholder="毒素含量最大可输入十位"/><span id="toxin_count" ></span></li><li><a class="del">删除</a></li></ul></div></li>')
+		var j=$(".editmiddle-right #toxin_id1");
 		$.ajax({
-			url:"rest/addtextoption",
+			url:"selectAlltoininfo",
 			type:"post",
 			dataType:"json",
 			success:function(res){
-				$.each(res,function(index,item){
-				$('div[class=addds] li:last-child').find('select').append('<option value='+(index+1)+'>'+item.toxin_type+'</option>');
-				});
+				for(var i=0;i<res.length;i++){
+				$('j.append(div[class=addds] li:edittable-middle').find('select').append('<option value='+res[i].id+'>'+res[i].toxinType+'</option>');
+				}
 			}
 		});
-	});
+	});*/
 	var delcharacter = [];
 	//样品编号联动
 	$(".ypbh").on("input",function(){

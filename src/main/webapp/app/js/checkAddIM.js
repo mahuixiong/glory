@@ -1,37 +1,37 @@
 var ok1=false,ok2=false,ok3=false,ok4=false,ok5=false,ok6=false,ok7=false,ok8=false,ok9=false,ok10=false,ok11=false,ok12=false,ok13=false,ok14=false,ok15=false;
-function checksample_id(){
-	var a=$("input[name=sample_id ]").val();
-	$("#sample_id").html("");
+/*function checksample_id(){
+	var a=$("input[name=sampleid ]").val();
+	$("#sampleid").html("");
 	var cc =  isalphanumber(a)
 	var ceshi = isalphanumberzhongwen(a);
 	var ss =  a.length;
 	if(a=="" ){
-		$("#sample_id").html("不能为空").css("color","red");ok1=false;
+		$("#sampleid").html("不能为空").css("color","red");ok1=false;
 	}else if  (ceshi == true ){
-		$("input[name=sample_id ]").val() = "";
-		$("#sample_id").html("编号格式不正确！！！！！").css("color","red");ok1=false;
+		$("input[name=sampleid ]").val() = "";
+		$("#sampleid").html("编号格式不正确！！！！！").css("color","red");ok1=false;
 	}else if  (cc == false){
-		$("#sample_id").html("编号格式不正确").css("color","red");ok1=false;
+		$("#sampleid").html("编号格式不正确").css("color","red");ok1=false;
 	}else if  (ss < "5" || ss > "15"){
-		$("#sample_id").html("编号长度不正确").css("color","red");ok1=false;
+		$("#sampleid").html("编号长度不正确").css("color","red");ok1=false;
 	}else{
-			var fromVals={"sample_id":a};
-			$.post("/glory/rest/ckeckSampleidOnly",fromVals,function(data,state){
+			var fromVals={"sampleid":a};
+			$.post("selectBysampleid",fromVals,function(data,state){
 				 //这里显示从服务器返回的数据
-				 if(data.flag == 1){
-					 $("#sample_id").html("样品编号已存在").css("color","red");ok1=false;
+				 if(data.code == 200){
+					 $("#sampleid").html("样品编号已存在").css("color","red");ok1=false;
 				 }else{
-					 $("#sample_id").html("√").css("color","green");ok1=true;
+					 $("#sampleid").html("√").css("color","green");ok1=true;
 				 }
 			},
 				 "json"
 			);
 			
-		}
+		}*/
 		
 		
 		//$("#sample_id").html("√").css("color","green");ok1=true;
-}
+//}
 
 
 function isalphanumber(str){  
@@ -167,7 +167,7 @@ function checktoxin_count(){
 }
 
 	
-$(function(){
+/*$(function(){
 	//毒素菌株信息
 	$(".add-con").on("focus",".sample",function(){
 		$(".sample").each(function(){
@@ -232,7 +232,7 @@ $(function(){
 		})
 	})
 })
-
+*/
 
 
 /**

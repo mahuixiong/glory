@@ -15,23 +15,6 @@ $(function(){
 			
 		};
 	});
-	/*添加毒素信息*/
-	$(".add-dsxx").click(function(){
-		$('.addds').append('<li class="edittable-middle"><div class="editmiddle-left">毒素信息</div><div class="editmiddle-right"><ul><li><lable>毒素种类</lable><select name="toxin_id" id="toxin_id1" onblur="checktoxin_id()"><option value="0" >请选择</option></select><span id="toxin_id" ></span></li><li><lable>毒素含量</lable><input name="toxin_count" type="text"  onblur="checktoxin_count()"  maxlength="10" placeholder="毒素含量最大可输入十位"/><span id="toxin_count" ></span></li><li><a class="del">删除</a></li></ul></div></li>')
-		//alert(1);
-		$.ajax({
-			url:"addtextoption",
-			type:"post",
-			dataType:"json",
-			sync:false,
-			success:function(res){
-				//alert(res);
-				$.each(res,function(index,item){
-				$('div[class=addds] li:last-child').find('select').append('<option value='+(index+1)+'>'+item.toxin_type+'</option>');
-				});
-			}
-		});
-	});
 	var delcharacter = [];
 	
 	$(".ypbh").on("input",function(){

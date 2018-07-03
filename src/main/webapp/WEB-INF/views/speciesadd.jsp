@@ -17,7 +17,7 @@
 		    	<form id="form1" method="post">
 		    	<ul class="add-list">
 		    		<li class="list-item">
-		    			<label>类别名称</label>
+		    			<label for="leibiemingcheng">类别名称</label>
 		    			<input type="text" name="breedname" id="breedname" value="">
 		    			<input type="hidden"name="cateid" id="cateid" readonly="readonly"value="${cateid}">
 		    		</li>
@@ -55,6 +55,8 @@
 	  function data(data){
 		  if(data.code==200){
 			  alert("保存成功");
+		  }else if(data.code==250){
+			  alert("类别名称不能为空");
 		  }else{
 			  alert("类别名存在");
 		  }

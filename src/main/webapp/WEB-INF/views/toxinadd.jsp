@@ -23,7 +23,7 @@
 		    		</li>
 		    		<c:forEach items="${species}" var="specie" >
 		    			<li class="list-item">
-		    				<input type="text" name="speciesname" readonly="readonly" value="${specie.cropSpecies}">
+		    				<input type="text" name="speciesname" readonly="readonly" maxlength="5" value="${specie.cropSpecies}">
 		    				<input type="text" name="par" value="0">
 		    				<input type="hidden" name="speciesid" value="${specie.id }">
 		    			</li> 
@@ -54,6 +54,8 @@
 	  	function data(data){
 	  		if(data.code==200){
 	  			alert("保存成功");
+	  		}else if(data.code==250){
+	  			alert("毒素名称不能为空");
 	  		}else{
 	  			alert("保存失败");
 	  		}

@@ -7,13 +7,21 @@ import top.glory.web.model.SampleinfoExample;
 import top.glory.web.model.SampleinfoWithBLOBs;
 
 public interface SampleinfoMapper {
+	/*
+	 * 查询sampleinfo记录
+	 */
+	List<Sampleinfo> selectAlltoxininfo();
+	/*
+	 *  模糊查询 sampleinfo，sampletoxininfo,cropspecies中的数据
+	 */
+	List<Sampleinfo> selectlikeSampleinfo(@Param("sampleId") String sampleId,@Param("province") String province,@Param("speciesId") Integer speciesId,@Param("toxininfoId") Integer toxininfoId,@Param("year") Integer year,@Param("min") Integer min,@Param("max") Integer max);
     int countByExample(SampleinfoExample example);
 
     int deleteByExample(SampleinfoExample example);
 
     int deleteByPrimaryKey(Integer id);
 
-    int insert(SampleinfoWithBLOBs record);
+    int insert(Sampleinfo sampleinfo);
 
     int insertSelective(SampleinfoWithBLOBs record);
 

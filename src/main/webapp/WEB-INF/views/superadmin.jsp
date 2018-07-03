@@ -148,6 +148,7 @@
     })
 
     var oLi=$('.public-ifame-item').length;
+<<<<<<< HEAD
     if(${userInfo.role==1}) {
         var arr = [
             'introduction2',//首页
@@ -226,6 +227,24 @@
 
         ]
     }
+=======
+		var arr=[
+			'introduction2',
+			'usermanagementindex',
+			'customerList',
+			'infomanagerList',
+			'categorylists?page=1',
+			'toxinlists?Page=1',
+			'selectlikesampleinfo?page=1',
+			'introduction',
+			'personchartView',
+			'personregionalDistribution1',
+			'personBrowsingHistory1',
+			'persondownloadRecord',
+			'personupdatePassword',
+			'contant',
+			]
+>>>>>>> f60d9a84cd05c589a4e66dc135829896b3137039
 	for(let i=0;i<oLi;i++){
 		$('.public-ifame-item').eq(i).click(function(){
 				$('#mainframe').attr('src',arr[i])
