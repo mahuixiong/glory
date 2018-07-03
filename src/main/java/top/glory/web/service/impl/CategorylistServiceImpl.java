@@ -5,17 +5,23 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import top.glory.web.dao.AddressprovinceMapper;
 import top.glory.web.dao.CropcategoryMapper;
 import top.glory.web.dao.CropspeciesMapper;
 import top.glory.web.dao.ParMapper;
+import top.glory.web.dao.SampleinfoMapper;
 import top.glory.web.dao.SampletoxininfoMapper;
 import top.glory.web.enums.Msg;
+import top.glory.web.model.Addressprovince;
+import top.glory.web.model.AddressprovinceExample;
 import top.glory.web.model.Cropcategory;
 import top.glory.web.model.CropcategoryExample;
 import top.glory.web.model.Cropspecies;
 import top.glory.web.model.CropspeciesExample;
 import top.glory.web.model.Par;
 import top.glory.web.model.ParExample;
+import top.glory.web.model.Sampleinfo;
+import top.glory.web.model.SampleinfoExample;
 import top.glory.web.model.Sampletoxininfo;
 import top.glory.web.model.SampletoxininfoExample;
 import top.glory.web.service.CategorylistService;
@@ -33,6 +39,10 @@ public class CategorylistServiceImpl implements CategorylistService{
 	private ParMapper parMapper;
 	@Autowired
 	private SampletoxininfoMapper toxininfoMapper;
+	@Autowired
+	private SampleinfoMapper sampleinfoMapper;
+	@Autowired
+	private AddressprovinceMapper provinceMapper;
 	/*
 	 * 
 	 * 农产品类别查询
@@ -54,6 +64,8 @@ public class CategorylistServiceImpl implements CategorylistService{
 		List<Cropcategory> list=this.cropcategoryMapper.selectBycropcate(cropcategory);
 		if(list.size()>0){
 			return Msg.fail();
+		}else if(cropcategory==null||cropcategory==""){
+			return Msg.updatefail();
 		}else{
 			Cropcategory crop= new Cropcategory();
 			crop.setCropCategory(cropcategory);
@@ -207,6 +219,8 @@ public class CategorylistServiceImpl implements CategorylistService{
 		List<Cropspecies> cropecies1=this.cropspeciesMapper.selectByExample(example1);
 		if(cropecies1.size()>0){
 			return Msg.fail();
+		}else if(breedname==null||breedname==""){
+			return Msg.updatefail();
 		}else{
 		Cropspecies cropspecies=new Cropspecies();
 		cropspecies.setCropSpecies(breedname);
@@ -263,7 +277,9 @@ public class CategorylistServiceImpl implements CategorylistService{
 		List<Sampletoxininfo> toxininfoList=this.toxininfoMapper.selectByExample(example);
 		if (toxininfoList.size()>0) {
 			return Msg.fail();
-		}else {
+		}else if(toxintype==null||toxintype==""){
+			return Msg.updatefail();
+		}else{
 			Sampletoxininfo toxininfo=new Sampletoxininfo();
 			toxininfo.setState(state);
 			toxininfo.setToxinType(toxintype);
@@ -286,6 +302,56 @@ public class CategorylistServiceImpl implements CategorylistService{
 				}
 			}
 			return Msg.success();
+		}
+		
+	}
+	 
+	/*
+	 * 模糊查询sampleinfo
+	 */
+	@Override
+	public PageInfo<Sampleinfo> selectlikeSampleinfo(Integer page,Integer pagesize,String sampleId,
+			String province, Integer speciesId, Integer toxininfoId,
+			Integer year, Integer wuranluv) {
+		page=page==null?1:page;
+		PageHelper.startPage(page, pagesize);
+		if(wuranluv==null){
+				Integer min=null;
+				Integer max=null;
+				List<Sampleinfo> list2=this.sampleinfoMapper.selectlikeSampleinfo(sampleId, province, speciesId, toxininfoId, year, min, max);
+				PageInfo pageInfo=new PageInfo<>(list2,pagesize);
+				return pageInfo;
+		}else if (wuranluv==1) {
+			int min=0;
+			int max=20;
+			List<Sampleinfo> list2=this.sampleinfoMapper.selectlikeSampleinfo(sampleId, province, speciesId, toxininfoId, year, min, max);
+			PageInfo pageInfo=new PageInfo<>(list2,pagesize);
+			return pageInfo;
+					
+		}else if(wuranluv==2) {
+			int min=20;
+			int max=40;
+			List<Sampleinfo> list2=this.sampleinfoMapper.selectlikeSampleinfo(sampleId, province, speciesId, toxininfoId, year, min, max);
+			PageInfo pageInfo=new PageInfo<>(list2,pagesize);
+			return pageInfo;
+		}else if (wuranluv==3) {
+			int min=40;
+			int max=60;
+			List<Sampleinfo> list2=this.sampleinfoMapper.selectlikeSampleinfo(sampleId, province, speciesId, toxininfoId, year, min, max);
+			PageInfo pageInfo=new PageInfo<>(list2,pagesize);
+			return pageInfo;
+		}else if (wuranluv==4) {
+			int min=60;
+			int max=80;
+			List<Sampleinfo> list2=this.sampleinfoMapper.selectlikeSampleinfo(sampleId, province, speciesId, toxininfoId, year, min, max);
+			PageInfo pageInfo=new PageInfo<>(list2,pagesize);
+			return pageInfo;
+		}else {
+			int min=80;
+			int max=100;
+			List<Sampleinfo> list2=this.sampleinfoMapper.selectlikeSampleinfo(sampleId, province, speciesId, toxininfoId, year, min, max);
+			PageInfo pageInfo=new PageInfo<>(list2,pagesize);
+			return pageInfo;
 		}
 		
 	}

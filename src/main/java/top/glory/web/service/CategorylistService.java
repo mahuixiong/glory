@@ -2,10 +2,14 @@ package top.glory.web.service;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import top.glory.web.enums.Msg;
 import top.glory.web.model.Cropcategory;
 import top.glory.web.model.Cropspecies;
 import top.glory.web.model.Par;
+import top.glory.web.model.Sampleinfo;
 import top.glory.web.model.Sampletoxininfo;
 
 import com.github.pagehelper.PageInfo;
@@ -16,6 +20,7 @@ public interface CategorylistService {
 	 * 农产品类别查询
 	 */
 	public PageInfo<Cropcategory> catetoryList(Integer page,Integer pagesize);
+	
 	/*
 	 * 新增大类别
 	 */
@@ -80,4 +85,10 @@ public interface CategorylistService {
 	 * 添加毒素
 	 */
 	public Msg addtoxininfo(String toxintype,Integer state,String[] speciesname,String[] par,String[] speciesid);
+	
+	 
+	/*
+	 * 模糊查询sampleinfo
+	 */
+	public PageInfo<Sampleinfo> selectlikeSampleinfo(Integer page,Integer pagesize, String sampleId,String province, Integer speciesId,Integer toxininfoId,Integer year, Integer wuranluv);
 }

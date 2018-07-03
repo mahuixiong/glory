@@ -136,6 +136,10 @@
       </if>
     </trim>
   </insert>
+  <!-- 根据toxinid和sampleinfoid查询toxincount -->
+  <select id="selectToxinCount" resultType="java.lang.Integer">
+  SELECT sample_toxin.toxin_count FROM sample_toxin WHERE toxin_id=#{id}  AND sample_info_id=#{sampleid}
+  </select>
   <select id="countByExample" parameterType="top.glory.web.model.SampletoxinExample" resultType="java.lang.Integer" >
     select count(*) from sample_toxin
     <if test="_parameter != null" >

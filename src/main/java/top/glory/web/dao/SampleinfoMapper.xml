@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="top.glory.web.dao.SampleinfoMapper" >
+
   <resultMap id="BaseResultMap" type="top.glory.web.model.Sampleinfo" >
     <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="crop_species" property="cropSpecies" jdbcType="VARCHAR" />
+    <result column="toxin_type" property="toxinType" jdbcType="VARCHAR" />
     <result column="sample_id" property="sampleId" jdbcType="VARCHAR" />
     <result column="crop_category_id" property="cropCategoryId" jdbcType="INTEGER" />
     <result column="breed" property="breed" jdbcType="INTEGER" />
@@ -114,6 +117,38 @@
     <if test="orderByClause != null" >
       order by ${orderByClause}
     </if>
+  </select>
+  <!-- 查询sampleinfo，sampletoxininfo,cropspecies中的数据 -->
+  <select id="selectAlltoxininfo" resultMap="BaseResultMap">
+  SELECT sample_info.sample_id,sample_info.province,sample_info.city,sample_info.county,crop_species.crop_species AS species,
+sample_info.sampling_time,sample_info.input_time,sample_info.pollution_rate,sample_toxin_info.toxin_type AS toxintype FROM sample_info,crop_species,sample_toxin_info WHERE
+crop_species.id=sample_info.breed AND sample_toxin_info.id=sample_info.toxin_id ORDER BY sample_info.pollution_rate DESC
+  </select>
+  <!-- 模糊查询 sampleinfo，sampletoxininfo,cropspecies中的数据-->
+  <select id="selectlikeSampleinfo" resultMap="BaseResultMap">
+  SELECT sample_info.sample_id,sample_info.province,sample_info.city,sample_info.county,crop_species.crop_species AS species,
+sample_info.sampling_time,sample_info.input_time,sample_info.pollution_rate,sample_toxin_info.toxin_type AS toxintype FROM 
+sample_info LEFT JOIN crop_species ON sample_info.breed=crop_species.id 
+LEFT JOIN sample_toxin_info ON sample_info.toxin_id=sample_toxin_info.id
+ WHERE 1=1
+<if test="sampleId!=null and sampleId!=''">
+AND sample_info.sample_id LIKE CONCAT('%',#{sampleId},'%') 
+</if>
+<if test="province!=null and province!=''">
+AND sample_info.province=#{province} 
+</if>
+<if test="speciesId!=0 and speciesId!=null">
+AND crop_species.id=#{speciesId}
+</if>
+<if test="toxininfoId!=0 and toxininfoId!=null">
+AND sample_toxin_info.id=#{toxininfoId}
+</if>
+<if test="year!=0 and year!=null">
+AND YEAR(sample_info.input_time)=#{year} 
+</if>
+<if test="min!=0 and min!=null">
+AND sample_info.pollution_rate BETWEEN #{min} AND #{max} 
+</if>
   </select>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="top.glory.web.model.SampleinfoExample" >
     select

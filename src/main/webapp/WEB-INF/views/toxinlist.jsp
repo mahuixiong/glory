@@ -47,7 +47,7 @@
 					<!--循环遍历连续显示的页面，若是当前页就高亮显示，并且没有链接-->  
                     <c:forEach items="${toxininfo.navigatepageNums}" var="page_num">  
                         <c:if test="${page_num == toxininfo.pageNum}">  
-                            <li class="pageing-item prev"><a href="#">${page_num}</a></li>  
+                            <li class="pageing-item  disabled active"><a href="#">${page_num}</a></li>  
                         </c:if>  
                         <c:if test="${page_num != toxininfo.pageNum}">  
                             <li class="pageing-item prev"><a href="toxinlists?Page=${page_num}">${page_num}</a></li>  

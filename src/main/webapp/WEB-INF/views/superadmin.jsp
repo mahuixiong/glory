@@ -142,7 +142,7 @@
 			'infomanagerList',
 			'categorylists?page=1',
 			'toxinlists?Page=1',
-			'IM',
+			'selectlikesampleinfo?page=1',
 			'introduction',
 			'personchartView',
 			'personregionalDistribution1',

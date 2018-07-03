@@ -6,6 +6,7 @@ import top.glory.web.model.Sampletoxin;
 import top.glory.web.model.SampletoxinExample;
 
 public interface SampletoxinMapper {
+	Float selectToxinCount(@Param("id")Integer id,@Param("sampleid")Integer sampleid);
     int countByExample(SampletoxinExample example);
 
     int deleteByExample(SampletoxinExample example);

@@ -50,6 +50,45 @@ public class Sampleinfo {
     private Integer enterpeople;
 
     private String varieties;
+    
+    private String species;
+    
+    private String toxintype;
+    private String seasonal;
+    private String description;
+    public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getSeasonal() {
+		return seasonal;
+	}
+
+	public void setSeasonal(String seasonal) {
+		this.seasonal = seasonal;
+	}
+
+	public String getSpecies() {
+		return species;
+	}
+
+	public void setSpecies(String species) {
+		this.species = species;
+	}
+
+	public String getToxintype() {
+		return toxintype;
+	}
+
+	public void setToxintype(String toxintype) {
+		this.toxintype = toxintype;
+	}
+
+	
 
     public Integer getId() {
         return id;

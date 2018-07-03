@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.aspectj.weaver.patterns.ThisOrTargetAnnotationPointcut;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,6 +19,7 @@ import top.glory.web.enums.Msg;
 import top.glory.web.model.Cropcategory;
 import top.glory.web.model.Cropspecies;
 import top.glory.web.model.Par;
+import top.glory.web.model.Sampleinfo;
 import top.glory.web.model.Sampletoxininfo;
 import top.glory.web.service.CategorylistService;
 
@@ -33,7 +35,6 @@ public class CropcategoryController {
 	 */
 	@RequestMapping("categorylists")
 	public String cropcategoryList(@RequestParam("page")Integer page,Map<String, Object>map){//, HttpServletRequest request
-		//Map<String, String[]> map2 = request.getParameterMap();
 		PageInfo<Cropcategory> pageinfo=this.categorylistService.catetoryList(page, 6);
 		map.put("catelist", pageinfo);
 		return "categorylist";
@@ -192,4 +193,37 @@ public class CropcategoryController {
 		String[] speciesid=request.getParameterValues("speciesid");
 		return this.categorylistService.addtoxininfo(toxintype, state, speciesname, par, speciesid);
 	}
+
+	/*
+	 * 模糊查询sampleinfo
+	 */
+	@RequestMapping("selectlikesampleinfo")
+	public String selectlikeSampleinfo(@RequestParam("page")Integer page,String bianhao,String province,Integer cropspecies,Integer toxintype,Integer year,Integer wuranluv,Map<String, Object>map){
+		if (bianhao!=null) {
+			map.put("bianhao1", bianhao);
+		}
+		if (province!=null) {
+			map.put("province1", province);
+		}
+		if (cropspecies!=null) {
+			map.put("cropspecies1", cropspecies);
+		}
+		if (toxintype!=null) {
+			map.put("toxintype1", toxintype);
+		}
+		if (year!=null) {
+			map.put("year1", year);
+		}
+		if (wuranluv!=null) {
+			map.put("wuranluv1", wuranluv);
+		}
+		List<Sampletoxininfo> toxininfo=this.categorylistService.selecttoxininfoBystate();
+		List<Cropspecies> species=this.categorylistService.selectAllspecies();
+		PageInfo<Sampleinfo> list=this.categorylistService.selectlikeSampleinfo(page,6,bianhao, province, cropspecies, toxintype, year, wuranluv);
+		map.put("species", species);
+		map.put("toxininfo", toxininfo);
+		map.put("sampleinfo", list);
+		return "IM";
+	}
+	
 }

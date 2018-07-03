@@ -61,9 +61,11 @@
 	   function data(data){
 		   if(data.code==200){
 		  alert("类别已添加");
-      	   }else{
-          alert("类别已经存在");
-       }
+      	   }else if(data.code==250){
+      		 alert("类别名不能为空");
+       	   }else{
+       		alert("类别已经存在");
+       	   }
 	   }
 	  }
 	  
